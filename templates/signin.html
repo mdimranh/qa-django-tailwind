@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static '/dist/output.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <section class="relative bg-white overflow-hidden">
+        <img class="absolute left-0 top-0" src="https://shuffle.dev/flaro-assets/images/sign-in/gradient.svg" alt="">
+        <div class="relative z-10 flex flex-wrap -m-8">
+            <div class="w-full md:w-1/2 p-8">
+                <div class="container px-4 mx-auto">
+                    <div class="flex flex-wrap">
+                        <div class="w-full">
+                            <div class="md:max-w-lg mx-auto pt-16 md:pb-32">
+                                <a class="mb-28 inline-block" href="#">
+                                    <img src="https://shuffle.dev/flaro-assets/logos/flaro-logo-black-xl.svg" alt="">
+                                </a>
+                                <h2
+                                    class="mb-32 text-6xl md:text-7xl font-bold font-heading tracking-px-n leading-tight">
+                                    Sign in and start saving time today.</h2>
+                                <h3 class="mb-9 text-xl font-bold font-heading leading-normal">Why should you join us?
+                                </h3>
+                                <ul class="md:max-w-xs">
+                                    <li class="mb-5 flex flex-wrap">
+                                        <svg class="mr-2" width="25" height="26" viewbox="0 0 25 26" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.5 23C18.0228 23 22.5 18.5228 22.5 13C22.5 7.47715 18.0228 3 12.5 3C6.97715 3 2.5 7.47715 2.5 13C2.5 18.5228 6.97715 23 12.5 23ZM17.1339 11.3839C17.622 10.8957 17.622 10.1043 17.1339 9.61612C16.6457 9.12796 15.8543 9.12796 15.3661 9.61612L11.25 13.7322L9.63388 12.1161C9.14573 11.628 8.35427 11.628 7.86612 12.1161C7.37796 12.6043 7.37796 13.3957 7.86612 13.8839L10.3661 16.3839C10.8543 16.872 11.6457 16.872 12.1339 16.3839L17.1339 11.3839Z"
+                                                fill="#4F46E5"></path>
+                                        </svg>
+                                        <span class="flex-1 font-medium leading-relaxed">The best you can do in no time
+                                            at
+                                            all, amazing feature goes here</span>
+                                    </li>
+                                    <li class="mb-5 flex flex-wrap">
+                                        <svg class="mr-2" width="25" height="26" viewbox="0 0 25 26" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.5 23C18.0228 23 22.5 18.5228 22.5 13C22.5 7.47715 18.0228 3 12.5 3C6.97715 3 2.5 7.47715 2.5 13C2.5 18.5228 6.97715 23 12.5 23ZM17.1339 11.3839C17.622 10.8957 17.622 10.1043 17.1339 9.61612C16.6457 9.12796 15.8543 9.12796 15.3661 9.61612L11.25 13.7322L9.63388 12.1161C9.14573 11.628 8.35427 11.628 7.86612 12.1161C7.37796 12.6043 7.37796 13.3957 7.86612 13.8839L10.3661 16.3839C10.8543 16.872 11.6457 16.872 12.1339 16.3839L17.1339 11.3839Z"
+                                                fill="#4F46E5"></path>
+                                        </svg>
+                                        <span class="flex-1 font-medium leading-relaxed">24/7 Support of our dedicated,
+                                            highly professional team</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 p-8 bg-slate-200">
+                <div class="p-4 py-16 flex flex-col justify-center bg-blueGray-100 h-full">
+                    <form class="md:max-w-lg mx-auto">
+                        <label class="block mb-4">
+                            <p class="mb-2 text-gray-900 font-semibold leading-normal">Email Address *</p>
+                            <input
+                                class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300"
+                                id="signInInput1-1" type="text" placeholder="Enter email address">
+                        </label>
+                        <label class="block mb-5">
+                            <p class="mb-2 text-gray-900 font-semibold leading-normal">Password *</p>
+                            <input
+                                class="px-4 py-3.5 w-full text-gray-400 font-medium placeholder-gray-400 bg-white outline-none border border-gray-300 rounded-lg focus:ring focus:ring-indigo-300"
+                                id="signInInput1-2" type="password" placeholder="********">
+                        </label>
+                        <div class="flex flex-wrap justify-between -m-2 mb-4">
+                            <div class="w-auto p-2">
+                                <div class="flex items-center">
+                                    <input class="w-4 h-4" id="default-checkbox" type="checkbox" value="">
+                                    <label class="ml-2 text-sm text-gray-900 font-medium"
+                                        for="default-checkbox">Remember
+                                        Me</label>
+                                </div>
+                            </div>
+                            <div class="w-auto p-2"><a class="text-sm text-indigo-600 hover:text-indigo-700 font-medium"
+                                    href="#">Forgot Password?</a></div>
+                        </div>
+                        <button
+                            class="mb-9 py-4 px-9 w-full text-white font-semibold border border-indigo-700 rounded-xl shadow-4xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200"
+                            type="button">Sign In</button>
+                        <p class="mb-5 text-sm text-gray-500 font-medium text-center">Or continue with</p>
+                        <div class="flex flex-wrap justify-center -m-2">
+                            <div class="w-auto p-2">
+                                <button
+                                    class="flex items-center p-4 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200">
+                                    <svg class="w-8 h-8" fill="#000000" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                    <span class="font-semibold leading-normal px-3">With Google</span>
+                                </button>
+                            </div>
+                            <div class="w-auto p-2">
+                                <button
+                                    class="flex items-center p-4 bg-white hover:bg-gray-50 border rounded-lg transition ease-in-out duration-200">
+                                    <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M19.76 10.77L19.67 10.42H12.23V13.58H16.68C16.4317 14.5443 15.8672 15.3974 15.0767 16.0029C14.2863 16.6084 13.3156 16.9313 12.32 16.92C11.0208 16.9093 9.77254 16.4135 8.81999 15.53C8.35174 15.0685 7.97912 14.5191 7.72344 13.9134C7.46777 13.3077 7.33407 12.6575 7.33 12C7.34511 10.6795 7.86792 9.41544 8.79 8.47002C9.7291 7.58038 10.9764 7.08932 12.27 7.10002C13.3779 7.10855 14.4446 7.52101 15.27 8.26002L17.47 6.00002C16.02 4.70638 14.1432 3.9941 12.2 4.00002C11.131 3.99367 10.0713 4.19793 9.08127 4.60115C8.09125 5.00436 7.19034 5.59863 6.43 6.35002C4.98369 7.8523 4.16827 9.85182 4.15152 11.9371C4.13478 14.0224 4.918 16.0347 6.34 17.56C7.12784 18.3449 8.06422 18.965 9.09441 19.3839C10.1246 19.8029 11.2279 20.0123 12.34 20C13.3484 20.0075 14.3479 19.8102 15.2779 19.42C16.2078 19.0298 17.0488 18.4549 17.75 17.73C19.1259 16.2171 19.8702 14.2347 19.83 12.19C19.8408 11.7156 19.8174 11.2411 19.76 10.77Z"
+                                                fill="#000000"></path>
+                                        </g>
+                                    </svg>
+                                    <span class="font-semibold leading-normal px-3">with Facebook</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

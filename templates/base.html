@@ -1,0 +1,985 @@
+{% load static %}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/img/imran.png" type="image/png">
+    <link href="{% static '/dist/output.css' %}" rel="stylesheet">
+    <link href="{% static '/dist/flowbite.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/fontawesome.min.css' %}" rel="stylesheet">
+    <link href="{% static '/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="">
+    <nav class="sticky top-0 z-40 flex justify-between items-center px-4 py-2 bg-white shadow">
+        <img class="w-10" src="/static/img/imran.png">
+        <div class="hidden sm:flex items-center w-1/2 lg:w-full max-w-md ms-8">
+            <!-- <label for="voice-search" class="sr-only">Search</label> -->
+            <div class="absolute flex items-center pl-3 pointer-events-none">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+            <button type="button" id="fake-input"
+                class="bg-gray-50 h-10 font-medium text-base border border-gray-300 text-gray-900 rounded-lg block w-full pl-10 px-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white hover:bg-gray-100"
+                placeholder="Search..."></button>
+            <div class="flex -ms-32 cursor-pointer">
+                <kbd
+                    class="p-1 text-xs font-semibold text-gray-800 bg-gray-200 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">Ctrl</kbd>
+                + <kbd
+                    class="p-1 text-xs font-semibold text-gray-800 bg-gray-200 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">Shift</kbd>
+                + <kbd
+                    class="p-1 text-xs font-semibold text-gray-800 bg-gray-200 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500">S</kbd>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <div class="flex sm:hidden items-center cursor-pointer" id="search-icon">
+                <svg aria-hidden="true"
+                    class="w-10 h-10 min-h-min min-w-min hover:bg-gray-200 text-gray-600 rounded-full p-2 cursor-pointer"
+                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </div>
+
+            <div class="flex items-center">
+                <button type="button" data-dropdown-toggle="language-dropdown-menu"
+                    class="flex items-center font-medium justify-center">
+                    <i
+                        class="fa-regular fa-circle-question fa-beat w-5 h-5 min-h-min min-w-min hover:bg-gray-200 hover:text-gray-900 rounded-full p-2 cursor-pointer"></i>
+                </button>
+                <!-- Dropdown -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+                    id="language-dropdown-menu">
+                    <ul class="py-2 font-medium" role="none">
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                role="menuitem">
+                                <div class="inline-flex items-center">
+                                    <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
+                                    Ask a question
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                role="menuitem">
+                                <div class="inline-flex items-center">
+                                    <i class="fa-solid fa-question fa-lg px-1 mr-1"></i>
+                                    My questions
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="mega-menu-icons">
+                <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown"
+                    class="flex items-center justify-between w-full font-medium text-gray-600 dark:text-white dark:hover:text-blue-500">
+                    <i
+                        class="fas fa-th-large w-5 h-5 min-h-min min-w-min hover:bg-gray-200 hover:text-gray-900 rounded-full p-2 cursor-pointer"></i>
+                </button>
+                <div id="mega-menu-icons-dropdown"
+                    class="absolute z-10 grid hidden w-auto mr-3 grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700">
+                    <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                        <ul class="space-y-4" aria-labelledby="mega-menu-icons-dropdown-button">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Quran</span>
+                                    <svg class="w-8 h-8 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" focusable="false" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Library</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    Library
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Resources</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z">
+                                        </path>
+                                    </svg>
+                                    Resources
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Pro Version</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                    Pro Version
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-4 pb-0 text-gray-900 md:pb-4 dark:text-white">
+                        <ul class="space-y-4">
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Blog</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                                            clip-rule="evenodd"></path>
+                                        <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                                    </svg>
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Newsletter</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z">
+                                        </path>
+                                    </svg>
+                                    Newsletter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">Playground</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z">
+                                        </path>
+                                    </svg>
+                                    Playground
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="flex items-center text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 group">
+                                    <span class="sr-only">License</span>
+                                    <svg class="w-4 h-4 mr-2 text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+                                        aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z">
+                                        </path>
+                                    </svg>
+                                    License
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mega-menu-icons">
+                <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification"
+                    class="flex items-center justify-between w-full font-medium text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-blue-500"
+                    type="button">
+                    <i
+                        class="fa-solid fa-bell w-5 h-5 min-h-min min-w-min hover:bg-gray-200 rounded-full p-2 cursor-pointer"></i>
+
+                </button>
+                <div id="dropdownNotification"
+                    class="z-20 hidden w-full max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700"
+                    aria-labelledby="dropdownNotificationButton">
+                    <div
+                        class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
+                        Notifications
+                    </div>
+                    <div class="divide-y divide-gray-100 dark:divide-gray-700">
+                        <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="flex-shrink-0">
+                                <img class="rounded-full w-11 h-11"
+                                    src="https://images.unsplash.com/photo-1616699598158-7b1112418fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2xpbSUyMG1hbnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                    alt="Jese image">
+                                <div
+                                    class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-blue-600 border border-white rounded-full dark:border-gray-800">
+                                    <svg class="w-3 h-3 text-white" aria-hidden="true" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                                        </path>
+                                        <path
+                                            d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="w-full pl-3">
+                                <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400">New message from <span
+                                        class="font-semibold text-gray-900 dark:text-white">Jese Leos</span>: "Hey,
+                                    what's up? All set
+                                    for the presentation?"</div>
+                                <div class="text-xs text-blue-600 dark:text-blue-500">a few moments ago</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1616699598158-7b1112418fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2xpbSUyMG1hbnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                    class="rounded-full w-11 h-11" alt="Joseph image">
+                                <div
+                                    class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-gray-900 border border-white rounded-full dark:border-gray-800">
+                                    <svg class="w-3 h-3 text-white" aria-hidden="true" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="w-full pl-3">
+                                <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
+                                        class="font-semibold text-gray-900 dark:text-white">Joseph Mcfall</span> and
+                                    <span class="font-medium text-gray-900 dark:text-white">5 others</span> started
+                                    following you.
+                                </div>
+                                <div class="text-xs text-blue-600 dark:text-blue-500">10 minutes ago</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1616699598158-7b1112418fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2xpbSUyMG1hbnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                    class="rounded-full w-11 h-11" alt="Bonnie image">
+                                <div
+                                    class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-red-600 border border-white rounded-full dark:border-gray-800">
+                                    <svg class="w-3 h-3 text-white" aria-hidden="true" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="w-full pl-3">
+                                <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
+                                        class="font-semibold text-gray-900 dark:text-white">Bonnie Green</span> and
+                                    <span class="font-medium text-gray-900 dark:text-white">141 others</span> love
+                                    your story. See it and
+                                    view more stories.
+                                </div>
+                                <div class="text-xs text-blue-600 dark:text-blue-500">44 minutes ago</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1616699598158-7b1112418fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2xpbSUyMG1hbnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                    class="rounded-full w-11 h-11" alt="Leslie image">
+                                <div
+                                    class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-green-400 border border-white rounded-full dark:border-gray-800">
+                                    <svg class="w-3 h-3 text-white" aria-hidden="true" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="w-full pl-3">
+                                <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
+                                        class="font-semibold text-gray-900 dark:text-white">Leslie Livingston</span>
+                                    mentioned you in a
+                                    comment: <span class="font-medium text-blue-500" href="#">@bonnie.green</span>
+                                    what do you say?
+                                </div>
+                                <div class="text-xs text-blue-600 dark:text-blue-500">1 hour ago</div>
+                            </div>
+                        </a>
+                        <a href="#" class="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <div class="flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1616699598158-7b1112418fd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2xpbSUyMG1hbnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                    class="rounded-full w-11 h-11" alt="Robert image">
+                                <div
+                                    class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-purple-500 border border-white rounded-full dark:border-gray-800">
+                                    <svg class="w-3 h-3 text-white" aria-hidden="true" fill="currentColor"
+                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="w-full pl-3">
+                                <div class="text-gray-500 text-sm mb-1.5 dark:text-gray-400"><span
+                                        class="font-semibold text-gray-900 dark:text-white">Robert Brown</span>
+                                    posted a new video:
+                                    Glassmorphism - learn how to implement the new design trend.</div>
+                                <div class="text-xs text-blue-600 dark:text-blue-500">3 hours ago</div>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="#"
+                        class="block py-2 text-sm font-medium text-center text-gray-900 rounded-b-lg bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+                        <div class="inline-flex items-center ">
+                            <svg class="w-4 h-4 mr-2 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                <path fill-rule="evenodd"
+                                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            View all
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <button type="button" {% if not user.is_authenticated%}data-modal-target="authentication-modal"
+                    data-modal-toggle="authentication-modal" {% else%} data-dropdown-toggle="dropdown-user" {%endif %}
+                    aria-expanded="false" class="flex items-center font-medium justify-center">
+                    <img class="w-8 h-8 mx-2 rounded-full object-cover" src="{% static 'img/profile.gif' %}">
+                </button>
+                <!-- Dropdown -->
+                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+                    id="dropdown-user">
+                    <div class="px-4 py-3" role="none">
+                        <p class="text-sm text-gray-900 dark:text-white" role="none">
+                            {{user.first_name}} {{user.last_name}}
+                        </p>
+                        <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                            {{user.email}}
+                        </p>
+                    </div>
+                    <ul class="py-1 text-gray-600" role="none">
+                        <li class="flex items-center px-4 hover:bg-gray-100 cursor-pointer">
+                            <i class="fa-solid fa-gauge fa-shake px-1"></i>
+                            <a href="#"
+                                class="block px-2 py-2 text-sm text-gray-700dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                role="menuitem">Dashboard</a>
+                        </li>
+                        <li class="flex items-center px-4 hover:bg-gray-100 cursor-pointer">
+                            <i class="fas fa-cog fa-spin px-1"></i>
+                            <a href="#"
+                                class="block px-2 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                                role="menuitem">Settings</a>
+                        </li>
+                    </ul>
+                    <div class="py-1 px-4 flex items-center text-gray-600 hover:bg-gray-100" role="none">
+                        <i class="fa-solid fa-right-from-bracket fa-flip px-1"></i>
+                        <a href="/auth/logout"
+                            class="block px-2 py-2 text-sm text-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
+                            role="menuitem">Signout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <nav id="second-nav" class="second-nav flex w-full text-sm items-center justify-center fixed bg-white shadow">
+        <div id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+            data-dropdown-delay="10" data-dropdown-offset-distance="0"
+            class="flex items-center cursor-pointer hover:bg-green-50 text-gray-400 hover:text-green-800 border-b-2 border-b-transparent hover:border-b-green-800 pt-2 pb-1 px-3">
+            <i class="fa-solid fa-folder-tree pr-2"></i>
+            <span class="text-green-800">Category</span>
+            <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 shadow w-32 dark:bg-gray-700">
+                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign
+                            out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div
+            class="flex items-center cursor-pointer hover:bg-green-50 text-gray-400 hover:text-green-800 border-b-2 border-b-transparent hover:border-b-green-800 pt-2 pb-1 px-3">
+            <i class="fa-solid fa-folder-tree pr-2"></i>
+            <span class="text-green-800">Category</span>
+        </div>
+    </nav>
+
+    <div class="main-content mt-9">
+
+        {% block main_content %}
+
+        {% endblock main_content %}
+
+    </div>
+
+    <div class="foot-nav">
+        <div id="searchModal" data-modal-placement="top-center" tabindex="-1" aria-hidden="true"
+            class="fixed top-10 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
+            <div class="relative w-full h-full max-w-2xl md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="py-2 border-b rounded-t dark:border-gray-600">
+                        <div class="flex items-center w-full px-6">
+                            <!-- <label for="voice-search" class="sr-only">Search</label> -->
+                            <div class="absolute flex items-center pr-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                    fill="currentColor" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"
+                                    stroke-width="0.5">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <input type="text" id="search-input"
+                                class="focus:ring-0 border-0 focus:outline-none h-10 text-base text-gray-900 block w-full pl-10 dark:placeholder-gray-400 dark:text-white "
+                                placeholder="Search your question" autocomplete="off">
+                            <button type="button" id="search-modal-close"
+                                class="inline-flex sm:hidden text-gray-400 -me-5 -mt-6 bg-transparent hover:bg-red-600 hover:text-gray-50 rounded-full text-xs p-0.5 ml-auto items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                data-modal-hide="searchModal">
+                                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6">
+                        <ul id="result-list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] md:h-full">
+            <div id="login" class="relative w-full h-full max-w-md md:h-auto">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                        data-modal-hide="authentication-modal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="px-6 py-6 lg:px-8">
+                        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to DAWAH</h3>
+                        <form class="space-y-6" action="/auth/login" method="post">
+                            {% csrf_token %}
+                            <div>
+                                <label for="username"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                <input type="email" name="email" id="username"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="Enter your email" required>
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <div>
+                                    <input type="password" name="password" id="password"
+                                        placeholder="Enter your password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                            focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-600
+                                            dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                </div>
+                                <div id="pass-eye" class="absolute right-10 mr-1 text-gray-600 -mt-8 cursor-pointer"><i
+                                        aria-hidden="true" class="fas fa-eye-slash"></i></div>
+                                <!-- <svg id="pass-open-eye"
+                                            class="pass-eye pass-open-eye w-6 h-6 absolute right-10 -mt-8 cursor-pointer"
+                                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                            </g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M16.8494 7.05025C14.1158 4.31658 9.6836 4.31658 6.94993 7.05025L4.82861 9.17157C3.49528 10.5049 2.82861 11.1716 2.82861 12C2.82861 12.8284 3.49528 13.4951 4.82861 14.8284L6.94993 16.9497C9.6836 19.6834 14.1158 19.6834 16.8494 16.9497L18.9707 14.8284C20.3041 13.4951 20.9707 12.8284 20.9707 12C20.9707 11.1716 20.3041 10.5049 18.9707 9.17157L16.8494 7.05025ZM12.0002 8.75C10.2053 8.75 8.75019 10.2051 8.75019 12C8.75019 13.7949 10.2053 15.25 12.0002 15.25C13.7951 15.25 15.2502 13.7949 15.2502 12C15.2502 10.2051 13.7951 8.75 12.0002 8.75Z"
+                                                    fill="#323232"></path>
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="#323232" stroke-width="2"></path>
+                                                <path
+                                                    d="M6.94975 7.05025C9.68342 4.31658 14.1156 4.31658 16.8492 7.05025L18.9706 9.17157C20.3039 10.5049 20.9706 11.1716 20.9706 12C20.9706 12.8284 20.3039 13.4951 18.9706 14.8284L16.8492 16.9497C14.1156 19.6834 9.68342 19.6834 6.94975 16.9497L4.82843 14.8284C3.49509 13.4951 2.82843 12.8284 2.82843 12C2.82843 11.1716 3.49509 10.5049 4.82843 9.17157L6.94975 7.05025Z"
+                                                    stroke="#323232" stroke-width="2" stroke-linejoin="round"></path>
+                                            </g>
+                                        </svg>
+                                        <svg id="pass-close-eye"
+                                            class="pass-eye pass-close-eye w-6 h-6 absolute right-10 -mt-8 cursor-pointer"
+                                            viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <rect width="24" height="24" fill="white"></rect>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M8.58579 4.71633C11.5332 3.37594 15.1293 3.91627 17.5561 6.3431L20.5579 9.34489C20.5881 9.37504 20.6179 9.40485 20.6475 9.43436C21.0546 9.84043 21.4062 10.1912 21.6188 10.5908C22.0875 11.4718 22.0875 12.5282 21.6188 13.4091C21.4062 13.8087 21.0546 14.1595 20.6475 14.5655C20.6179 14.5951 20.5881 14.6249 20.5579 14.655L20.5059 14.7071C20.1154 15.0976 19.4822 15.0976 19.0917 14.7071C18.7011 14.3165 18.7011 13.6834 19.0917 13.2929L19.1437 13.2408C19.6921 12.6924 19.8007 12.5683 19.8532 12.4697C20.0094 12.176 20.0094 11.8239 19.8532 11.5302C19.8007 11.4316 19.6921 11.3075 19.1437 10.7591L16.1419 7.75732C14.3237 5.93914 11.627 5.53041 9.41372 6.53692C8.91098 6.76554 8.31809 6.54333 8.08946 6.04059C7.86084 5.53785 8.08305 4.94496 8.58579 4.71633Z"
+                                                    fill="#323232"></path>
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M2.38203 4.51599C2.7211 4.08004 3.34938 4.00151 3.78533 4.34058L21.7853 18.3406C22.2213 18.6796 22.2998 19.3079 21.9607 19.7439C21.6217 20.1798 20.9934 20.2584 20.5574 19.9193L17.5965 17.6164L17.556 17.6569C14.4319 20.7811 9.36653 20.7811 6.24234 17.6569L4.07447 15.489C3.4476 14.8622 2.90746 14.3221 2.5331 13.8315C2.1319 13.3056 1.82812 12.7208 1.82812 12C1.82812 11.2792 2.1319 10.6944 2.5331 10.1686C2.90746 9.6779 3.44759 9.13783 4.07447 8.51102L4.86863 7.71687L2.55745 5.91928C2.1215 5.58021 2.04296 4.95194 2.38203 4.51599ZM12.7566 13.852L14.4455 15.1656C13.7694 15.6887 12.921 16 12 16C9.79086 16 8 14.2092 8 12C8 11.4344 8.11741 10.8962 8.32918 10.4084L10.0191 11.7228C10.0065 11.8134 10 11.906 10 12C10 13.1046 10.8954 14 12 14C12.2678 14 12.5232 13.9474 12.7566 13.852Z"
+                                                    fill="#323232"></path>
+                                            </g>
+                                        </svg> -->
+                            </div>
+                            <div class="flex justify-end">
+                                <!-- <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="remember" value="off" type="checkbox" name="remember_me"
+                                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800">
+                                            </div>
+                                            <label for="remember"
+                                                class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                                me</label>
+                                        </div> -->
+                                <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost
+                                    Password?</a>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
+                                to your account</button>
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                Not registered? <a href="#" id="signup-btn"
+                                    class="text-blue-700 hover:underline dark:text-blue-500">Create
+                                    account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="signup" class="relative w-full h-full max-w-lg md:h-auto hidden">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                        data-modal-hide="authentication-modal">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="px-6 py-6 lg:px-8">
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create Account</h3>
+                        <form class="space-y-6 mt-6" action="/auth/join" method="post">
+                            {% csrf_token %}
+                            <div class="grid md:grid-cols-2 md:gap-6">
+                                <div class="relative z-0 w-full group">
+                                    <label for="email"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
+                                        Name</label>
+                                    <input type="text" name="first_name" id="first_name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                        placeholder="First Name" required>
+                                </div>
+                                <div class="relative z-0 w-full group">
+                                    <label for="email"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last
+                                        Name</label>
+                                    <input type="text" name="last_name" id="last_name"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                        placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                <input type="email" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="name@company.com" required>
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <div>
+                                    <input type="password" name="password" id="password"
+                                        placeholder="Enter your password"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                                                        focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-600
+                                                                        dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                </div>
+                                <div id="pass-eye" class="absolute right-10 mr-1 text-gray-600 -mt-8 cursor-pointer"><i
+                                        aria-hidden="true" class="fas fa-eye-slash"></i></div>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Registration</button>
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                Already have an account? <a href="#" id="login-btn"
+                                    class="text-blue-700 hover:underline dark:text-blue-500">Login</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-dial-init class="fixed left-6 bottom-6 group">
+            <div id="speed-dial-menu-click" class="flex flex-col items-center hidden mb-4 space-y-2">
+                <form class="bg-slate-300 p-4 rounded-lg">
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                            email</label>
+                        <input type="email" id="email"
+                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                            placeholder="name@flowbite.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="repeat-password"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
+                        <textarea type="password" id="repeat-password" rows="5"
+                            class="resize-none w-72 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                </form>
+
+            </div>
+            <button type="button" data-dial-toggle="speed-dial-menu-click" data-dial-trigger="click"
+                aria-controls="speed-dial-menu-click" aria-expanded="false"
+                class="flex items-center justify-center text-white bg-blue-700 rounded-full w-12 h-12 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+                </svg>
+
+                <span class="sr-only">Open actions menu</span>
+            </button>
+        </div>
+
+        <div class="flex justify-center flex-wrap items-center">
+            <div class="px-6 text-center bg-white sm:p-8 dark:bg-gray-800">
+                <h5 class="mb-2 text-2xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
+                <p class="mb-5 text-base text-warning text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date
+                    and
+                    move work
+                    forward. Download the app today.</p>
+                <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+                    <a href="#"
+                        class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                        <svg class="mr-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab"
+                            data-icon="apple" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <path fill="currentColor"
+                                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                            </path>
+                        </svg>
+                        <div class="text-left">
+                            <div class="mb-1 text-xs">Download on the</div>
+                            <div class="-mt-1 font-sans text-sm font-semibold">Mac App Store</div>
+                        </div>
+                    </a>
+                    <a href="#"
+                        class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                        <svg class="mr-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab"
+                            data-icon="google-play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                            </path>
+                        </svg>
+                        <div class="text-left">
+                            <div class="mb-1 text-xs">Get in on</div>
+                            <div class="-mt-1 font-sans text-sm font-semibold">Google Play</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <section
+                class="px-6 bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+                <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
+                    <a href="#"
+                        class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
+                        <span class="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span
+                            class="text-sm font-medium">Jumbotron component was launched! See what's new</span>
+                        <svg aria-hidden="true" class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <h1 class="mb-4 text-lg font-extrabold tracking-tight leading-none text-gray-900  dark:text-white">
+                        We invest in the world's potential</h1>
+                    <form class="w-full max-w-md mx-auto">
+                        <label for="default-email"
+                            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Email
+                            sign-up</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+                                    </path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                            </div>
+                            <input type="email" id="default-email"
+                                class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                placeholder="Enter your email here..." required>
+                            <button type="submit"
+                                class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign
+                                up</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <div class="max-w-sm px-8 bg-white dark:bg-gray-800">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
+                        technology
+                        acquisitions 2021</h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                    technology
+                    acquisitions
+                    of 2021 so far, in reverse chronological order.</p>
+                <a href="#"
+                    class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Read more
+                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <footer class="bg-white dark:bg-gray-900 z-40">
+            <hr class="border-gray-200 sm:mx-auto dark:border-gray-700" />
+            <div class="flex justify-center sm:block mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a
+                            href="https://flowbite.com/" class="hover:underline">DAWAH™</a>. All Rights Reserved.
+                    </span>
+                    <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Facebook page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Instagram page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
+                            <span class="sr-only">Twitter page</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">GitHub account</span>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Dribbble account</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    </div>
+    <script src="{% static 'js/flowbite.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/fontawesome.min.js' %}"></script>
+    <script>
+        const $targetEl = document.getElementById('searchModal');
+        const options = {
+            placement: 'top-center',
+            backdrop: 'dynamic',
+            backdropClasses: 'bg-gray-900 bg-opacity-50 dark:bg-opacity-80 fixed inset-0 z-40',
+            closable: true
+        };
+        const modal = new Modal($targetEl, options);
+    </script>
+    <script>
+        $("#fake-input").click(function () {
+            modal.show();
+            $('#search-input').focus();
+        })
+        $("#search-icon").click(function () {
+            modal.show();
+            $('#search-input').focus();
+        })
+        $('#search-modal-close').click(function () {
+            modal.hide();
+        })
+        $(document).keydown(function (evt) {
+            if (evt.ctrlKey && evt.shiftKey && evt.keyCode == 83) {
+                evt.preventDefault();
+                modal.toggle();
+                $('#search-input').focus();
+            }
+        });
+        $("#search-input").on("keyup change", function () {
+            $.ajax({
+                url: "http://localhost:5000",
+                data: {
+                    "keyword": $("#search-input").val(),
+                },
+                method: "POST",
+                success: function (data) {
+                    var rlist = $("#result-list");
+                    rlist.empty();
+                    for (result in data.results) {
+                        rlist.append(
+                            `<li>
+                                <a href="#"
+                                class="flex items-center p-2 text-base text-gray-800 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                                <span class="flex ml-1 whitespace-nowrap">${data.results[result]}</span>
+                                </a>
+                            </li>`
+                        )
+                    }
+                }
+            })
+        })
+    </script>
+    <script>
+        const loginbtn = document.getElementById("login-btn");
+        const signupbtn = document.getElementById("signup-btn");
+        const login_div = document.getElementById("login");
+        const signup_div = document.getElementById("signup");
+
+        loginbtn.addEventListener("click", function () {
+            if (login_div.classList.contains("hidden")) {
+                login_div.classList.remove("hidden");
+                signup_div.classList.add("hidden");
+            } else {
+                dilogin_divv1.classList.add("hidden");
+                signup_div.classList.remove("hidden");
+            }
+        });
+        signupbtn.addEventListener("click", function () {
+            if (signup_div.classList.contains("hidden")) {
+                signup_div.classList.remove("hidden");
+                login_div.classList.add("hidden");
+            } else {
+                signup_div.classList.add("hidden");
+                login_div.classList.remove("hidden");
+            }
+        });
+
+    </script>
+    <script>
+        $("#pass-eye").click(function () {
+            var pass = $(this).parent().children().find("input[id=password]");
+            var pass_eye = $(this).parent().children().find("i[id=pass-eye]");
+            if (pass.attr('type') === "password") {
+                pass.attr('type', 'text');
+                $(this).find('[data-fa-i2svg]')
+                    .toggleClass('fa-eye')
+                    .toggleClass('fa-eye-slash');
+            }
+            else {
+                pass.attr('type', 'password');
+                $(this).find('[data-fa-i2svg]')
+                    .toggleClass('fa-eye')
+                    .toggleClass('fa-eye-slash');
+            }
+        })
+    </script>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos < currentScrollPos) {
+                if (!$("#second-nav").hasClass("scrolling")) {
+                    // $("#second-nav").removeClass("top-15")
+                    // $("#second-nav").addClass("top-6")
+                    $("#second-nav").addClass("scrolling")
+                }
+            } else {
+                if ($("#second-nav").hasClass("scrolling")) {
+                    // $("#second-nav").removeClass("top-6")
+                    $("#second-nav").removeClass("scrolling")
+                    // $("#second-nav").addClass("top-15")
+                }
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <script>
+        $("button[role='tab']").click(function (e) {
+            $(this).parent().children().each(function () {
+                if ($(this).hasClass("active")) {
+                    $(this).removeClass("active")
+                }
+            })
+            $(this).addClass("active")
+        })
+    </script>
+</body>
+
+</html>
