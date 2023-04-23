@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "suraname";
+    src: url("../fonts/quran-114.ttf");
+}
+
+@font-face {
+    font-family: "suraname-color";
+    src: url("../fonts/QuranSurah1-mLKO5.ttf");
+}
+
+@font-face {
+    font-family: "bismillah";
+    src: url("../fonts/bismillah.TTF");
+}
+
+@font-face {
+    font-family: "allah";
+    src: url("../fonts/allah-muhammad.ttf");
+}
+
+@font-face {
+    font-family: "kfgq";
+    src: url("../fonts/arabic/kfgq.otf");
+}
+
+@font-face {
+    font-family: "amiri";
+    src: url("../fonts/arabic/amiri-quran.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "alqalam";
+    src: url("../fonts/arabic/alqalam.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "noorehidayat";
+    src: url("../fonts/arabic/noorehidayat.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "noorehira";
+    src: url("../fonts/arabic/noorehira.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "pdms";
+    src: url("../fonts/arabic/pdms_saleem.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "qur_std";
+    src: url("../fonts/arabic/QUR_STD.TTF");
+}
+
+@font-face {
+    font-family: "solaimanlipi";
+    src: url("../fonts/bangla/solaimanlipi.ttf");
+}
+
+
 @layer components {
     .second-nav {
         position: fixed;
@@ -11,4 +72,13 @@
     .scrolling {
         top: 0px;
     }
+    .question-list {
+        max-height: 600px;
+    }
+    .sura-list.selected {
+        background-color: rgba(128, 128, 128, 0.1);
+    }
+    /* .grid-flow-col{
+        grid-auto-flow: column;
+    } */
 }

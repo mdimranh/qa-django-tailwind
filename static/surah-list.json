@@ -1,0 +1,800 @@
+[
+    {
+        "index": "1",
+        "bn_name": " আল ফাতিহা",
+        "type": "মক্কা",
+        "total_aya": "7",
+        "page": "!"
+    },
+    {
+        "index": "2",
+        "bn_name": " আল বাক্বারাহ্",
+        "type": "মদীনা",
+        "total_aya": "286",
+        "page": ""
+    },
+    {
+        "index": "3",
+        "bn_name": " আলে ইমরান",
+        "type": "মদীনা",
+        "total_aya": "200",
+        "page": "#"
+    },
+    {
+        "index": "4",
+        "bn_name": " আন-নিসা",
+        "type": "মদীনা",
+        "total_aya": "176",
+        "page": "$"
+    },
+    {
+        "index": "5",
+        "bn_name": " আল-মায়েদাহ্",
+        "type": "মদীনা",
+        "total_aya": "120",
+        "page": "%"
+    },
+    {
+        "index": "6",
+        "bn_name": " আল-আন‘আম",
+        "type": "মক্কা",
+        "total_aya": "165",
+        "page": "&"
+    },
+    {
+        "index": "7",
+        "bn_name": " আল-আ‘রাফ",
+        "type": "মক্কা",
+        "total_aya": "206",
+        "page": "'"
+    },
+    {
+        "index": "8",
+        "bn_name": " আল-আনফাল",
+        "type": "মদীনা",
+        "total_aya": "75",
+        "page": "("
+    },
+    {
+        "index": "9",
+        "bn_name": " আত-তাওবাহ্",
+        "type": "মদীনা",
+        "total_aya": "129",
+        "page": ")"
+    },
+    {
+        "index": "10",
+        "bn_name": " ইউনুস",
+        "type": "মক্কা",
+        "total_aya": "109",
+        "page": "*"
+    },
+    {
+        "index": "11",
+        "bn_name": " হূদ",
+        "type": "মক্কা",
+        "total_aya": "123",
+        "page": "+"
+    },
+    {
+        "index": "12",
+        "bn_name": " ইউসুফ",
+        "type": "মক্কা",
+        "total_aya": "111",
+        "page": ","
+    },
+    {
+        "index": "13",
+        "bn_name": " আর-রা‘দ",
+        "type": "মদীনা",
+        "total_aya": "43",
+        "page": "-"
+    },
+    {
+        "index": "14",
+        "bn_name": " ইব্রাহীম",
+        "type": "মক্কা",
+        "total_aya": "52",
+        "page": "."
+    },
+    {
+        "index": "15",
+        "bn_name": " আল-হিজর",
+        "type": "মক্কা",
+        "total_aya": "99",
+        "page": "/"
+    },
+    {
+        "index": "16",
+        "bn_name": " আন-নাহ্&zwnj;ল",
+        "type": "মক্কা",
+        "total_aya": "128",
+        "page": "0"
+    },
+    {
+        "index": "17",
+        "bn_name": " আল-ইসরা",
+        "type": "মক্কা",
+        "total_aya": "111",
+        "page": "1"
+    },
+    {
+        "index": "18",
+        "bn_name": "আল-কাহফ",
+        "type": "মক্কা",
+        "total_aya": "110",
+        "page": "2"
+    },
+    {
+        "index": "19",
+        "bn_name": "মারইয়াম",
+        "type": "মক্কা",
+        "total_aya": "98",
+        "page": "3"
+    },
+    {
+        "index": "20",
+        "bn_name": "ত্বা-হা",
+        "type": "মক্কা",
+        "total_aya": "135",
+        "page": "4"
+    },
+    {
+        "index": "21",
+        "bn_name": "আল-আম্বিয়া",
+        "type": "মক্কা",
+        "total_aya": "112",
+        "page": "5"
+    },
+    {
+        "index": "22",
+        "bn_name": "আল-হাজ্জ",
+        "type": "মদীনা",
+        "total_aya": "78",
+        "page": "6"
+    },
+    {
+        "index": "23",
+        "bn_name": "আল-মু’মিনূন",
+        "type": "মক্কা",
+        "total_aya": "118",
+        "page": "7"
+    },
+    {
+        "index": "24",
+        "bn_name": "আন-নূর",
+        "type": "মদীনা",
+        "total_aya": "64",
+        "page": "8"
+    },
+    {
+        "index": "25",
+        "bn_name": "আল-ফুরক্বান",
+        "type": "মক্কা",
+        "total_aya": "77",
+        "page": "9"
+    },
+    {
+        "index": "26",
+        "bn_name": "আশ-শু‘আরা",
+        "type": "মক্কা",
+        "total_aya": "227",
+        "page": ":"
+    },
+    {
+        "index": "27",
+        "bn_name": "আন-নামল",
+        "type": "মক্কা",
+        "total_aya": "93",
+        "page": ";"
+    },
+    {
+        "index": "28",
+        "bn_name": "আল-ক্বাসাস",
+        "type": "মক্কা",
+        "total_aya": "88",
+        "page": "<"
+    },
+    {
+        "index": "29",
+        "bn_name": "আল-‘আনকাবূত",
+        "type": "মক্কা",
+        "total_aya": "69",
+        "page": "="
+    },
+    {
+        "index": "30",
+        "bn_name": "আর-রূম",
+        "type": "মক্কা",
+        "total_aya": "60",
+        "page": ">"
+    },
+    {
+        "index": "31",
+        "bn_name": "লুক্বমান",
+        "type": "মক্কা",
+        "total_aya": "34",
+        "page": "?"
+    },
+    {
+        "index": "32",
+        "bn_name": "আস-সাজদা",
+        "type": "মক্কা",
+        "total_aya": "30",
+        "page": "@"
+    },
+    {
+        "index": "33",
+        "bn_name": "আল-আহযাব",
+        "type": "মদীনা",
+        "total_aya": "73",
+        "page": "a"
+    },
+    {
+        "index": "34",
+        "bn_name": "সাবা",
+        "type": "মক্কা",
+        "total_aya": "54",
+        "page": "A"
+    },
+    {
+        "index": "35",
+        "bn_name": "ফাতের",
+        "type": "মক্কা",
+        "total_aya": "45",
+        "page": "b"
+    },
+    {
+        "index": "36",
+        "bn_name": "ইয়াসীন",
+        "type": "মক্কা",
+        "total_aya": "83",
+        "page": "B"
+    },
+    {
+        "index": "37",
+        "bn_name": "আস-সাফ্&zwnj;ফাত",
+        "type": "মক্কা",
+        "total_aya": "181",
+        "page": "446"
+    },
+    {
+        "index": "38",
+        "bn_name": "সুরত সদ",
+        "type": "মক্কা",
+        "total_aya": "88",
+        "page": "453"
+    },
+    {
+        "index": "39",
+        "bn_name": "আয-যুমার",
+        "type": "মক্কা",
+        "total_aya": "75",
+        "page": "458"
+    },
+    {
+        "index": "40",
+        "bn_name": "গাফের",
+        "type": "মক্কা",
+        "total_aya": "85",
+        "page": "467"
+    },
+    {
+        "index": "41",
+        "bn_name": "ফুসসিলাত",
+        "type": "মক্কা",
+        "total_aya": "54",
+        "page": "477"
+    },
+    {
+        "index": "42",
+        "bn_name": "আশ-শূরা",
+        "type": "মক্কা",
+        "total_aya": "53",
+        "page": "483"
+    },
+    {
+        "index": "43",
+        "bn_name": "আয-যুখরুফ",
+        "type": "মক্কা",
+        "total_aya": "89",
+        "page": "489"
+    },
+    {
+        "index": "44",
+        "bn_name": "আদ-দুখান",
+        "type": "মক্কা",
+        "total_aya": "59",
+        "page": "496"
+    },
+    {
+        "index": "45",
+        "bn_name": "আল-জাসিয়া",
+        "type": "মক্কা",
+        "total_aya": "37",
+        "page": "499"
+    },
+    {
+        "index": "46",
+        "bn_name": "আল-আহক্বাফ",
+        "type": "মক্কা",
+        "total_aya": "35",
+        "page": "502"
+    },
+    {
+        "index": "47",
+        "bn_name": "মুহাম্মাদ",
+        "type": "মদীনা",
+        "total_aya": "38",
+        "page": "507"
+    },
+    {
+        "index": "48",
+        "bn_name": "আল-ফাতহ",
+        "type": "মদীনা",
+        "total_aya": "29",
+        "page": "511"
+    },
+    {
+        "index": "49",
+        "bn_name": "আল-হুজুরাত",
+        "type": "মদীনা",
+        "total_aya": "18",
+        "page": "515"
+    },
+    {
+        "index": "50",
+        "bn_name": "সুরত ক্বাফ",
+        "type": "মক্কা",
+        "total_aya": "45",
+        "page": "518"
+    },
+    {
+        "index": "51",
+        "bn_name": "আয-যারিয়াত",
+        "type": "মক্কা",
+        "total_aya": "60",
+        "page": "520"
+    },
+    {
+        "index": "52",
+        "bn_name": "আত-তূর",
+        "type": "মক্কা",
+        "total_aya": "49",
+        "page": "523"
+    },
+    {
+        "index": "53",
+        "bn_name": "আন-নাজম",
+        "type": "মক্কা",
+        "total_aya": "62",
+        "page": "526"
+    },
+    {
+        "index": "54",
+        "bn_name": "আল-ক্বামার",
+        "type": "মক্কা",
+        "total_aya": "55",
+        "page": "528"
+    },
+    {
+        "index": "55",
+        "bn_name": "আর-রাহমান",
+        "type": "মদীনা",
+        "total_aya": "78",
+        "page": "531"
+    },
+    {
+        "index": "56",
+        "bn_name": "আল-ওয়াক্বি‘আহ",
+        "type": "মক্কা",
+        "total_aya": "96",
+        "page": "534"
+    },
+    {
+        "index": "57",
+        "bn_name": "আল-হাদীদ",
+        "type": "মদীনা",
+        "total_aya": "29",
+        "page": "537"
+    },
+    {
+        "index": "58",
+        "bn_name": "আল-মুজাদালাহ্",
+        "type": "মদীনা",
+        "total_aya": "22",
+        "page": "542"
+    },
+    {
+        "index": "59",
+        "bn_name": "আল-হাশর",
+        "type": "মদীনা",
+        "total_aya": "24",
+        "page": "545"
+    },
+    {
+        "index": "60",
+        "bn_name": "আল-মুমতাহিনা",
+        "type": "মদীনা",
+        "total_aya": "13",
+        "page": "549"
+    },
+    {
+        "index": "61",
+        "bn_name": "আস-সাফ",
+        "type": "মদীনা",
+        "total_aya": "14",
+        "page": "551"
+    },
+    {
+        "index": "62",
+        "bn_name": "আল-জুমু‘আ",
+        "type": "মদীনা",
+        "total_aya": "11",
+        "page": "553"
+    },
+    {
+        "index": "63",
+        "bn_name": "আল-মুনাফিক্বূন",
+        "type": "মদীনা",
+        "total_aya": "11",
+        "page": "554"
+    },
+    {
+        "index": "64",
+        "bn_name": "আত-তাগাবুন",
+        "type": "মদীনা",
+        "total_aya": "18",
+        "page": "556"
+    },
+    {
+        "index": "65",
+        "bn_name": "আত-ত্বালাক",
+        "type": "মদীনা",
+        "total_aya": "12",
+        "page": "558"
+    },
+    {
+        "index": "66",
+        "bn_name": "আত-তাহরীম",
+        "type": "মদীনা",
+        "total_aya": "12",
+        "page": "560"
+    },
+    {
+        "index": "67",
+        "bn_name": "আল-মুলক",
+        "type": "মক্কা",
+        "total_aya": "30",
+        "page": "562"
+    },
+    {
+        "index": "68",
+        "bn_name": "আল-ক্বালাম",
+        "type": "মক্কা",
+        "total_aya": "52",
+        "page": "564"
+    },
+    {
+        "index": "69",
+        "bn_name": "আল-হাক্কাহ্",
+        "type": "মক্কা",
+        "total_aya": "52",
+        "page": "566"
+    },
+    {
+        "index": "70",
+        "bn_name": "আল-মা‘আরেজ",
+        "type": "মক্কা",
+        "total_aya": "44",
+        "page": "568"
+    },
+    {
+        "index": "71",
+        "bn_name": "নূহ",
+        "type": "মক্কা",
+        "total_aya": "28",
+        "page": "570"
+    },
+    {
+        "index": "72",
+        "bn_name": "আল-জিন্ন",
+        "type": "মক্কা",
+        "total_aya": "28",
+        "page": "572"
+    },
+    {
+        "index": "73",
+        "bn_name": "আল-মুযযাম্মিল",
+        "type": "মক্কা",
+        "total_aya": "20",
+        "page": "574"
+    },
+    {
+        "index": "74",
+        "bn_name": "আল-মুদ্দাস্&zwnj;সির",
+        "type": "মক্কা",
+        "total_aya": "56",
+        "page": "575"
+    },
+    {
+        "index": "75",
+        "bn_name": "আল-ক্বিয়ামাহ্&zwnj;",
+        "type": "মক্কা",
+        "total_aya": "40",
+        "page": "577"
+    },
+    {
+        "index": "76",
+        "bn_name": "আল-ইনসান",
+        "type": "মদীনা",
+        "total_aya": "31",
+        "page": "578"
+    },
+    {
+        "index": "77",
+        "bn_name": "আল-মুরসালাত",
+        "type": "মক্কা",
+        "total_aya": "50",
+        "page": "580"
+    },
+    {
+        "index": "78",
+        "bn_name": "আন-নাবা",
+        "type": "মক্কা",
+        "total_aya": "40",
+        "page": "582"
+    },
+    {
+        "index": "79",
+        "bn_name": "আন-নাযি‘আত",
+        "type": "মক্কা",
+        "total_aya": "46",
+        "page": "583"
+    },
+    {
+        "index": "80",
+        "bn_name": "‘আবাসা",
+        "type": "মক্কা",
+        "total_aya": "42",
+        "page": "585"
+    },
+    {
+        "index": "81",
+        "bn_name": "আত-তাকভীর",
+        "type": "মক্কা",
+        "total_aya": "29",
+        "page": "586"
+    },
+    {
+        "index": "82",
+        "bn_name": "আল-ইনফিতার",
+        "type": "মক্কা",
+        "total_aya": "19",
+        "page": "587"
+    },
+    {
+        "index": "83",
+        "bn_name": "আল-মুতাফফিফীন",
+        "type": "মক্কা",
+        "total_aya": "36",
+        "page": "587"
+    },
+    {
+        "index": "84",
+        "bn_name": "আল-ইনশিক্বাক",
+        "type": "মক্কা",
+        "total_aya": "25",
+        "page": "589"
+    },
+    {
+        "index": "85",
+        "bn_name": "আল-বুরূজ",
+        "type": "মক্কা",
+        "total_aya": "22",
+        "page": "590"
+    },
+    {
+        "index": "86",
+        "bn_name": "আত-ত্বারেক",
+        "type": "মক্কা",
+        "total_aya": "17",
+        "page": "591"
+    },
+    {
+        "index": "87",
+        "bn_name": "আল-আ‘লা",
+        "type": "মক্কা",
+        "total_aya": "19",
+        "page": "591"
+    },
+    {
+        "index": "88",
+        "bn_name": "আল-গাশিয়াহ্",
+        "type": "মক্কা",
+        "total_aya": "26",
+        "page": "592"
+    },
+    {
+        "index": "89",
+        "bn_name": "আল-ফাজর",
+        "type": "মক্কা",
+        "total_aya": "30",
+        "page": "593"
+    },
+    {
+        "index": "90",
+        "bn_name": "আল-বালাদ",
+        "type": "মক্কা",
+        "total_aya": "20",
+        "page": "594"
+    },
+    {
+        "index": "91",
+        "bn_name": "আশ-শামস",
+        "type": "মক্কা",
+        "total_aya": "15",
+        "page": "595"
+    },
+    {
+        "index": "92",
+        "bn_name": "আল-লাইল",
+        "type": "মক্কা",
+        "total_aya": "21",
+        "page": "595"
+    },
+    {
+        "index": "93",
+        "bn_name": "আদ্ব-দ্বুহা",
+        "type": "মক্কা",
+        "total_aya": "11",
+        "page": "596"
+    },
+    {
+        "index": "94",
+        "bn_name": "আশ-শারহ",
+        "type": "মক্কা",
+        "total_aya": "8",
+        "page": "596"
+    },
+    {
+        "index": "95",
+        "bn_name": "আত-তীন",
+        "type": "মক্কা",
+        "total_aya": "8",
+        "page": "597"
+    },
+    {
+        "index": "96",
+        "bn_name": "আল-‘আলাক্ব",
+        "type": "মক্কা",
+        "total_aya": "19",
+        "page": "597"
+    },
+    {
+        "index": "97",
+        "bn_name": "আল-ক্বাদর",
+        "type": "মক্কা",
+        "total_aya": "5",
+        "page": "598"
+    },
+    {
+        "index": "98",
+        "bn_name": "আল-বায়্যিনাহ্",
+        "type": "মদীনা",
+        "total_aya": "8",
+        "page": "598"
+    },
+    {
+        "index": "99",
+        "bn_name": "আয-যালযালাহ্",
+        "type": "মদীনা",
+        "total_aya": "8",
+        "page": "599"
+    },
+    {
+        "index": "100",
+        "bn_name": "আল-‘আদিয়াত",
+        "type": "মক্কা",
+        "total_aya": "11",
+        "page": "599"
+    },
+    {
+        "index": "101",
+        "bn_name": "আল-ক্বারি‘আহ্",
+        "type": "মক্কা",
+        "total_aya": "11",
+        "page": "600"
+    },
+    {
+        "index": "102",
+        "bn_name": "আত-তাকাসুর",
+        "type": "মক্কা",
+        "total_aya": "8",
+        "page": "600"
+    },
+    {
+        "index": "103",
+        "bn_name": "আল-‘আসর",
+        "type": "মক্কা",
+        "total_aya": "3",
+        "page": "601"
+    },
+    {
+        "index": "104",
+        "bn_name": "আল-হুমাযাহ্",
+        "type": "মক্কা",
+        "total_aya": "9",
+        "page": "601"
+    },
+    {
+        "index": "105",
+        "bn_name": "আল-ফীল",
+        "type": "মক্কা",
+        "total_aya": "5",
+        "page": "601"
+    },
+    {
+        "index": "106",
+        "bn_name": "ক্বুরাইশ",
+        "type": "মক্কা",
+        "total_aya": "4",
+        "page": "602"
+    },
+    {
+        "index": "107",
+        "bn_name": "আল-মা‘ঊন",
+        "type": "মক্কা",
+        "total_aya": "7",
+        "page": "602"
+    },
+    {
+        "index": "108",
+        "bn_name": "আল-কাউসার",
+        "type": "মক্কা",
+        "total_aya": "3",
+        "page": "602"
+    },
+    {
+        "index": "109",
+        "bn_name": "আল-কাফিরূন",
+        "type": "মক্কা",
+        "total_aya": "6",
+        "page": "603"
+    },
+    {
+        "index": "110",
+        "bn_name": "আন-নাসর",
+        "type": "মদীনা",
+        "total_aya": "3",
+        "page": "603"
+    },
+    {
+        "index": "111",
+        "bn_name": "আল-মাসাদ",
+        "type": "মক্কা",
+        "total_aya": "5",
+        "page": "603"
+    },
+    {
+        "index": "112",
+        "bn_name": "আল-ইখলাস",
+        "type": "মক্কা",
+        "total_aya": "4",
+        "page": "604"
+    },
+    {
+        "index": "113",
+        "bn_name": "আল-ফালাক্ব",
+        "type": "মদীনা",
+        "total_aya": "5",
+        "page": "604"
+    },
+    {
+        "index": "114",
+        "bn_name": "আন-নাস",
+        "type": "মদীনা",
+        "total_aya": "6",
+        "page": "604"
+    }
+]
