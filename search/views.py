@@ -81,13 +81,11 @@ def quran_search(query):
 
     # Compute cosine similarity between the query and document vectors
     similarity_scores = cosine_similarity(query_vector, quran_data[1])
-    
-    print(similarity_scores)
 
     # Create a list of dictionaries containing the documents, similarity scores, and indices
     results = []
     for i, doc in enumerate(quran_data[2]):
-        if similarity_scores[0][i] >= 0.5:
+        if similarity_scores[0][i]:
             result = {
                 "arabic": doc["arabic"],
                 "bengali": doc["bengali"],

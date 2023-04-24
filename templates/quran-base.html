@@ -11,12 +11,23 @@
     <link href="{% static '/css/fontawesome.min.css' %}" rel="stylesheet">
     <link href="{% static '/css/style.css' %}" rel="stylesheet">
     <link href="{% static '/css/icons.min.css' %}" rel="stylesheet">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            $("#theme-toggle-light-icon").addClass("hidden");
+            $("#theme-toggle-dark-icon").removeClass("hidden");
+        } else {
+            document.documentElement.classList.remove('dark')
+            $("#theme-toggle-dark-icon").addClass("hidden");
+            $("#theme-toggle-light-icon").removeClass("hidden");
+        }
+    </script>
     {% block css %}{% endblock css %}
     <title class="font-arabic">{% block title %}{% endblock title %}</title>
 </head>
 
-<body class="">
-    <nav class="fixed top-0 z-40 flex justify-between w-full items-center px-4 py-2 bg-white shadow">
+<body class="dark:bg-gray-800 dark:text-slate-400">
+    <nav class="fixed top-0 z-40 flex justify-between w-full items-center px-4 py-2 bg-white dark:bg-gray-800 border-b dark:border-b-slate-700 shadow">
         <a href="/"><img class="w-10" src="/static/img/imran.png"></a>
         <div class="hidden sm:flex items-center w-1/2 lg:w-full max-w-md ms-8">
             <!-- <label for="voice-search" class="sr-only">Search</label> -->
@@ -51,6 +62,12 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </div>
+
+            <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none rounded-full text-sm p-2.5">
+                <svg aria-hidden="true" id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg aria-hidden="true" id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Toggle dark mode</span>
+              </button>
 
             <div class="flex items-center">
                 <button type="button" data-dropdown-toggle="language-dropdown-menu"
@@ -328,7 +345,7 @@
                                 </svg>
                             </div>
                             <input type="text" id="search-input" name="query" placeholder="Search..."
-                                class="focus:ring-0 border-0 focus:outline-none h-10 text-base text-gray-900 block w-full pl-10 dark:placeholder-gray-400 dark:text-white "
+                                class="focus:ring-0 border-0 focus:outline-none h-10 text-base text-gray-900 block w-full pl-10 dark:placeholder-gray-400 dark:text-white dark:bg-gray-700 "
                                 placeholder="Search your question" autocomplete="off">
                             <button type="button" id="search-modal-close"
                                 class="inline-flex text-gray-400 -me-5 -mt-6 bg-transparent hover:bg-gray-300 hover:text-gray-700 rounded-lg text-xs p-0.5 ml-auto items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -346,7 +363,7 @@
                     <!-- Modal body -->
                     <div>
                         <div class="p-3 max-h-96 overflow-y-auto">
-                            <ul id="result-list" class="">
+                            <ul id="result-list">
                                 <li class="text-center">
                                     <h3>No Result Found<h3>
                                 </li>
@@ -560,6 +577,26 @@
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/fontawesome.min.js' %}"></script>
     <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            $("#theme-toggle-light-icon").addClass("hidden");
+            $("#theme-toggle-dark-icon").removeClass("hidden");
+        } else {
+            $("#theme-toggle-dark-icon").addClass("hidden");
+            $("#theme-toggle-light-icon").removeClass("hidden");
+        }
+    </script>
+    <script>
+        async function waitUntilDOMReady() {
+            await new Promise(function(resolve) {
+              if (document.readyState !== "loading") resolve();
+              else document.addEventListener("DOMContentLoaded", resolve);
+            });
+            $(".skeleton").remove();
+            $(".sura-main").removeClass("hidden");
+        }
+        waitUntilDOMReady();
+    </script>
+    <script>
         const $targetEl = document.getElementById('searchModal');
         const options = {
             placement: 'top-center',
@@ -588,9 +625,31 @@
                 $('#search-input').focus();
             }
         });
+        function convertToBengaliDigits(number) {
+            const englishDigits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+            const bengaliDigits = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+          
+            // Convert the number to a string
+            const numberString = number.toString();
+          
+            // Loop through each character in the string and replace any English digits with Bengali digits
+            let result = "";
+            for (let i = 0; i < numberString.length; i++) {
+              const digit = numberString[i];
+              const index = englishDigits.indexOf(digit);
+              if (index !== -1) {
+                result += bengaliDigits[index];
+              } else {
+                result += digit;
+              }
+            }
+          
+            return result;
+          }
         $("#search-input").on("keyup change", function () {
+            arabic_font = localStorage.getItem('quran-font');
             $.ajax({
-                url: "http://localhost:8000/search/question",
+                url: "http://localhost:8000/search/quran",
                 data: {
                     "query": $("#search-input").val(),
                 },
@@ -608,13 +667,10 @@
                     else {
                         for (result in response){
                             rlist.append(
-                                `<li>
+                                `<li class="mb-2">
                                     <a href="#"
                                     class="flex items-center justify-between p-2 text-base text-gray-800 rounded-lg hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                                    <span class="flex ml-1">${result}. ${response[result]['question']}</span>
-                                    <div class="flex flex-col jsutify-center items-center w-24">
-                                        <span class="text-sm">${response[result]['user']['first_name']}</span>
-                                    </div>
+                                    <span class="flex w-full justify-between ml-1 gap-2"><span class="flex gap-2"><span>${convertToBengaliDigits(parseInt(result)+1)}.</span><span class="flex flex-col gap-1"><span class="text-end font-${arabic_font}">${response[result]['arabic']}</span><span>${response[result]['bengali']}</span></span></span><span><span class="flex flex-col ml-2 w-20"><span>sura: ${convertToBengaliDigits(response[result]['sura'])}</span><span>ayat: ${convertToBengaliDigits(response[result]['aya'])}</span></span><span></span>
                                     </a>
                                 </li>`
                             )
@@ -683,6 +739,23 @@
             }
             prevScrollpos = currentScrollPos;
         }
+    </script>
+    <script>
+        $("#theme-toggle").click(function(){
+            theme = localStorage.getItem("theme");
+            if (theme === "dark"){
+                localStorage.setItem("theme", "light");
+                document.documentElement.classList.remove('dark');
+                $("#theme-toggle-dark-icon").addClass("hidden");
+                $("#theme-toggle-light-icon").removeClass("hidden");
+            }
+            else {
+                localStorage.setItem("theme", "dark");
+                document.documentElement.classList.add('dark');
+                $("#theme-toggle-light-icon").addClass("hidden");
+                $("#theme-toggle-dark-icon").removeClass("hidden");
+            }
+        })
     </script>
     {% block js %}{% endblock js %}
 </body>

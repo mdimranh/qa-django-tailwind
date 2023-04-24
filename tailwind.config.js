@@ -15,7 +15,7 @@ module.exports = {
         'allah': ['allah'],
         'kfgq': ['solaimanlipi', 'kfgq', 'allah'],
         'qur_std': ['solaimanlipi', 'qur_std', 'allah'],
-        'alqalam': ['alqalam'],
+        'alqalam': ['alqalam', 'allah'],
         'noorehidayat': ['noorehidayat'],
         'noorehira': ['noorehira'],
         'pdms': ['pdms'],
