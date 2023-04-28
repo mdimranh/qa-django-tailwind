@@ -1,0 +1,10 @@
+{% load static %}
+{% load custom_tags %}
+
+<div id="reading" class="flex w-full max-w-4xl mx-auto" style="direction: rtl;">
+    <div class="inline-block">
+        {% for ayat in sura.ayats %}
+            <div class="flex text-4xl my-6 leading-relaxed"><span class="ml-3 font-ayano">{% number_convert 'english_to_arabic' ayat.aya %}</span><span class="font-kfgq">{{ayat.arabic_text}}</span></div>
+        {% endfor %}
+    </div>
+</div>

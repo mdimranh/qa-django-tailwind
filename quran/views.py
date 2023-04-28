@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from django.http import JsonResponse
 from pymongo import MongoClient
 from bson import json_util
 import json, re, convert_numbers
@@ -49,8 +50,112 @@ def sura_details(request, id):
         sura['bn_type'] = 'মাদানী'
     ayats = db.quran.surah.find_one({"index": id})['ayats']
     sura['ayats'] = ayats
+    sura['translate_by'] = 'আবু বকর মুহাম্মাদ যাকারিয়া'
+    sura['language'] = 'Bengali'
+    pipeline = [
+        {"$match": {"surah_id": id}},
+        {"$group": {"_id": "$verse_id", "words": {"$push": {"ar": "$words_ar", "id": "$_id", "wid": "$words_id", "bn": "$translate_bn"}}}}
+    ]
+    words = db.quran.bywords.aggregate(pipeline)
+    sorted_data = [(item['_id'], item['words']) for item in words]
+    sorted_data = sorted(sorted_data, key=lambda x: x[0])
+    verses = [{'id': item[0], 'words': item[1], "arabic_text": ayats[item[0]-1]['arabic_text'], "translation": ayats[item[0]-1]['translation'], "footnotes": ayats[item[0]-1]['footnotes']} for item in sorted_data]
+    
     context = {
         "sura": sura,
+        "verses": verses,
         "sura_list": sura_list
     }
     return render(request, 'sura.html', context)
+
+def verses(request, id):
+    page = request.GET.get('page', 2)
+    start_id = ((int(page)-1)*20)+1
+    end_id = int(page)*20
+    get_sura = db.quran.surah_list.find_one({"id": id})
+    sura = json.loads(json_util.dumps(get_sura))
+    ayats = db.quran.surah.find_one({"index": id})['ayats']
+    sura['ayats'] = ayats[start_id-1:end_id]
+    sura['translate_by'] = 'আবু বকর মুহাম্মাদ যাকারিয়া'
+    sura['language'] = 'Bengali'
+    pipeline = [
+        {"$match": {"surah_id": id, "verse_id": {"$gte": start_id, "$lte": end_id}}},
+        {"$group": {"_id": "$verse_id", "words": {"$push": {"ar": "$words_ar", "id": "$_id", "wid": "$words_id", "bn": "$translate_bn"}}}}
+    ]
+    words = db.quran.bywords.aggregate(pipeline)
+    sorted_data = [(item['_id'], item['words']) for item in words]
+    sorted_data = sorted(sorted_data, key=lambda x: x[0])
+    verses = [{'id': item[0], 'words': item[1], "arabic_text": ayats[item[0]-1]['arabic_text'], "translation": ayats[item[0]-1]['translation'], "footnotes": ayats[item[0]-1]['footnotes']} for item in sorted_data]
+    
+    context = {
+        "sura": sura,
+        "verses": verses
+    }
+    return JsonResponse(context)
+    
+
+def sura_translate(request, id):
+    get_sura = db.quran.surah_list.find_one({"id": id})
+    sura = json.loads(json_util.dumps(get_sura))
+    ayats = db.quran.surah.find_one({"index": id})['ayats']
+    sura['ayats'] = ayats
+    sura['translate_by'] = 'আবু বকর মুহাম্মাদ যাকারিয়া'
+    sura['language'] = 'Bengali'
+    pipeline = [
+        {"$match": {"surah_id": id}},
+        {"$group": {"_id": "$verse_id", "words": {"$push": {"ar": "$words_ar", "id": "$_id", "wid": "$words_id", "bn": "$translate_bn"}}}}
+    ]
+    words = db.quran.bywords.aggregate(pipeline)
+    sorted_data = [(item['_id'], item['words']) for item in words]
+    sorted_data = sorted(sorted_data, key=lambda x: x[0])
+    verses = [{'id': item[0], 'words': item[1], "arabic_text": sura['ayats'][item[0]-1]['arabic_text'], "translation": sura['ayats'][item[0]-1]['translation'], "footnotes": sura['ayats'][item[0]-1]['footnotes']} for item in sorted_data]
+    
+    context = {
+        "sura": sura,
+        "verses": verses
+    }
+    return render(request, 'sura/translate.html', context)
+
+def sura_tafseer(request, id):
+    get_sura = db.quran.surah_list.find_one({"id": id})
+    sura = json.loads(json_util.dumps(get_sura))
+    ayats = db.quran.surah.find_one({"index": id})['ayats']
+    sura['ayats'] = ayats
+    sura['translate_by'] = 'আবু বকর মুহাম্মাদ যাকারিয়া'
+    sura['language'] = 'Bengali'
+    pipeline = [
+        {"$match": {"surah_id": id}},
+        {"$group": {"_id": "$verse_id", "words": {"$push": {"ar": "$words_ar", "id": "$_id", "wid": "$words_id", "bn": "$translate_bn"}}}}
+    ]
+    words = db.quran.bywords.aggregate(pipeline)
+    sorted_data = [(item['_id'], item['words']) for item in words]
+    sorted_data = sorted(sorted_data, key=lambda x: x[0])
+    verses = [{'id': item[0], 'words': item[1], "arabic_text": sura['ayats'][item[0]-1]['arabic_text'], "translation": sura['ayats'][item[0]-1]['translation'], "footnotes": sura['ayats'][item[0]-1]['footnotes']} for item in sorted_data]
+    
+    context = {
+        "sura": sura,
+        "verses": verses
+    }
+    return render(request, 'sura/tafseer.html', context)
+
+def sura_reading(request, id):
+    get_sura = db.quran.surah_list.find_one({"id": id})
+    sura = json.loads(json_util.dumps(get_sura))
+    ayats = db.quran.surah.find_one({"index": id})['ayats']
+    sura['ayats'] = ayats
+    sura['translate_by'] = 'আবু বকর মুহাম্মাদ যাকারিয়া'
+    sura['language'] = 'Bengali'
+    pipeline = [
+        {"$match": {"surah_id": id}},
+        {"$group": {"_id": "$verse_id", "words": {"$push": {"ar": "$words_ar", "id": "$_id", "wid": "$words_id", "bn": "$translate_bn"}}}}
+    ]
+    words = db.quran.bywords.aggregate(pipeline)
+    sorted_data = [(item['_id'], item['words']) for item in words]
+    sorted_data = sorted(sorted_data, key=lambda x: x[0])
+    verses = [{'id': item[0], 'words': item[1], "arabic_text": sura['ayats'][item[0]-1]['arabic_text'], "translation": sura['ayats'][item[0]-1]['translation'], "footnotes": sura['ayats'][item[0]-1]['footnotes']} for item in sorted_data]
+    
+    context = {
+        "sura": sura,
+        "verses": verses
+    }
+    return render(request, 'sura/reading.html', context)

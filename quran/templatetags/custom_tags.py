@@ -20,9 +20,9 @@ def number_convert(function, value):
 
 @register.simple_tag
 def make_3_digit(value):
-    if len(value) == 3:
+    if len(str(value)) == 3:
         return value
-    elif len(value) == 2:
+    elif len(str(value)) == 2:
         return f"0{value}"
-    elif len(value) == 1:
+    elif len(str(value)) == 1:
         return f"00{value}"

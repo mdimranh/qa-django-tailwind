@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'quran-base.html' %}
 {% load static %}
 
 {% block title %}কুরআন মাজিদ{% endblock title %}
@@ -6,20 +6,20 @@
 
 <div class="container mx-auto px-6">
 
-    <div class="grid grid-cols-3 grid-flow-rows gap-3 p-3">
+    <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-flow-rows gap-3 p-3">
         {% for sura in suras %}
-        <a href="/quran/sura/{{sura.id}}" class="flex group justify-between items-center py-4 pe-6 border-2 border-gray-100 hover:bg-gray-100 cursor-pointer">
+        <a href="/quran/sura/{{sura.id}}" class="flex group justify-between items-center py-4 pe-6 border-2 rounded-md border-gray-100 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
             <div class="flex justify-start items-center">
                 <div class="w-24 text-center">
                     <span>{{sura.sid}}</span>
                 </div>
                 <div class="flex flex-col gap-1">
-                    <span class="font-bold text-sm group-hover:text-lime-700">{{sura.bn_name}}</span>
+                    <span class="font-bold text-sm group-hover:text-lime-700 dark:group-hover:text-white">{{sura.bn_name}}</span>
                     <span class="font-thin text-sm">{{sura.translation}}</span>
                 </div>
             </div>
             <div class="flex flex-col items-center -mt-4">
-                <span class="font-suraname text-6xl p-0 group-hover:text-lime-700">{{sura.index}}</span>
+                <span class="font-suraname text-6xl p-0 group-hover:text-lime-700 dark:group-hover:text-white">{{sura.index}}</span>
                 <span class="font-light text-sm -mt-3">{{sura.total_verses}} আয়াত</span>
             </div>
         </a>

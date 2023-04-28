@@ -11,13 +11,14 @@
     <link href="{% static '/css/fontawesome.min.css' %}" rel="stylesheet">
     <link href="{% static '/css/style.css' %}" rel="stylesheet">
     <link href="{% static '/css/icons.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.classList.add('dark');
             $("#theme-toggle-light-icon").addClass("hidden");
             $("#theme-toggle-dark-icon").removeClass("hidden");
         } else {
-            document.documentElement.classList.remove('dark')
+            document.documentElement.classList.remove('dark');
             $("#theme-toggle-dark-icon").addClass("hidden");
             $("#theme-toggle-light-icon").removeClass("hidden");
         }
@@ -28,7 +29,10 @@
 
 <body class="dark:bg-gray-800 dark:text-slate-400">
     <nav class="fixed top-0 z-40 flex justify-between w-full items-center px-4 py-2 bg-white dark:bg-gray-800 border-b dark:border-b-slate-700 shadow">
-        <a href="/"><img class="w-10" src="/static/img/imran.png"></a>
+        <div class="flex items-center">
+            <span id="slist-icon"><i class="md:hidden fa-solid fa-list p-2 rounded-full me-2 cursor-pointer hover:bg-gray-200"></i></span>
+            <a href="/"><img class="w-10" src="{% static 'img/svg/imran.svg' %}"></a>
+        </div>
         <div class="hidden sm:flex items-center w-1/2 lg:w-full max-w-md ms-8">
             <!-- <label for="voice-search" class="sr-only">Search</label> -->
             <div class="absolute flex items-center pl-3 pointer-events-none">
@@ -63,17 +67,17 @@
                 </svg>
             </div>
 
-            <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none rounded-full text-sm p-2.5">
-                <svg aria-hidden="true" id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none rounded-full text-sm p-2">
+                <svg aria-hidden="true" id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 <svg aria-hidden="true" id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
                 <span class="sr-only">Toggle dark mode</span>
-              </button>
+            </button>
 
             <div class="flex items-center">
                 <button type="button" data-dropdown-toggle="language-dropdown-menu"
                     class="flex items-center font-medium justify-center">
                     <i
-                        class="fa-regular fa-circle-question fa-beat w-5 h-5 min-h-min min-w-min hover:bg-gray-200 hover:text-gray-900 rounded-full p-2 cursor-pointer"></i>
+                        class="fa-regular fa-circle-question w-5 h-5 min-h-min min-w-min text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 cursor-pointer"></i>
                 </button>
                 <!-- Dropdown -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
@@ -105,17 +109,17 @@
 
             <div id="mega-menu-icons">
                 <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown"
-                    class="flex items-center justify-between w-full font-medium text-gray-600 dark:text-white dark:hover:text-blue-500">
+                    class="flex items-center justify-between w-full font-medium">
                     <i
-                        class="fas fa-th-large w-5 h-5 min-h-min min-w-min hover:bg-gray-200 hover:text-gray-900 rounded-full p-2 cursor-pointer"></i>
+                        class="fas fa-th-large w-5 h-5 min-h-min min-w-min text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 cursor-pointer"></i>
                 </button>
                 <div id="mega-menu-icons-dropdown"
                     class="absolute z-10 grid hidden w-fit p-3 grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700">
-                    <a href="{% url 'quran-home' %}" class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-lg">
+                    <a href="{% url 'quran-home' %}" class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 dark:text-gray-400 dark:hover:text-gray-200 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 p-2 cursor-pointer rounded-lg">
                         <i class="mdi mdi-book-open-page-variant text-2xl"></i>
                         <p>কুরআন মাজিদ</p>
                     </a>
-                    <div class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-lg">
+                    <div class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 p-2 cursor-pointer rounded-lg">
                         <i class="mdi mdi-bookshelf text-2xl"></i>
                         <p>হাদিস</p>
                     </div>
@@ -124,13 +128,13 @@
 
             <div id="mega-menu-icons">
                 <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification"
-                    class="flex items-center justify-between w-full font-medium text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-blue-500"
+                    class="flex items-center justify-between w-full font-medium "
                     type="button">
-                    <i class="fa-solid fa-bell w-5 h-5 min-h-min min-w-min hover:bg-gray-200 rounded-full p-2 cursor-pointer"></i>
+                    <i class="fa-solid fa-bell w-5 h-5 min-h-min min-w-min text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 cursor-pointer"></i>
 
                 </button>
                 <div id="dropdownNotification"
-                    class="z-20 hidden w-full sm:max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700"
+                    class="z-20 hidden w-full sm:max-w-sm border dark:border-gray-600 bg-white divide-y divide-gray-100 dark:bg-gray-800 rounded-lg shadow dark:divide-gray-700"
                     aria-labelledby="dropdownNotificationButton">
                     <div
                         class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
@@ -539,42 +543,10 @@
             </div>
         </div>
 
-        <div data-dial-init class="fixed left-6 bottom-6 group">
-            <div id="speed-dial-menu-click" class="bg-gray-400 px-2 flex flex-col items-center hidden rounded-lg mb-4 space-y-2">
-                <form class="mt-10 mb-1 p-4 bg-white rounded-lg">
-                    <div class="mb-6">
-                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                            email</label>
-                        <input type="email" id="email"
-                            class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                            placeholder="name@flowbite.com" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="repeat-password"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-                        <textarea type="password" id="repeat-password" rows="5"
-                            class="resize-none w-72 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                            required></textarea>
-                    </div>
-                    <button type="submit"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-                </form>
-
-            </div>
-            <button type="button" data-dial-toggle="speed-dial-menu-click" data-dial-trigger="click"
-                aria-controls="speed-dial-menu-click" aria-expanded="false"
-                class="flex items-center justify-center text-white bg-blue-700 rounded-full w-12 h-12 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none dark:focus:ring-blue-800 z-50">
-                <i class="fa-solid fa-question fa-beat"></i>
-
-                <span class="sr-only">Open actions menu</span>
-            </button>
-        </div>
-
     </div>
 
     </div>
     <script src="{% static 'js/flowbite.min.js' %}"></script>
-    <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/fontawesome.min.js' %}"></script>
     <script>
         if (localStorage.getItem('theme') === 'dark') {
@@ -591,7 +563,7 @@
               if (document.readyState !== "loading") resolve();
               else document.addEventListener("DOMContentLoaded", resolve);
             });
-            $(".skeleton").remove();
+            $(".skeleton").addClass("hidden");
             $(".sura-main").removeClass("hidden");
         }
         waitUntilDOMReady();

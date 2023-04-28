@@ -1,0 +1,67 @@
+{% load static %}
+{% load custom_tags %}
+
+<div class="flex flex-col gap-3 py-3" id="translate">
+    {% for verse in verses %}
+    <div class="border-2 border-gray-200 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-800">
+        <div class="flex flex-col p-3">
+            <div id="play-tooltip" role="tooltip" class="absolute z-30 invisible inline-block px-2 py-1 text-xs font-medium text-white bg-lime-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                তিলাওয়াত শুনুন
+            </div>
+            <div id="bookmark-tooltip" role="tooltip" class="absolute z-30 invisible inline-block px-2 py-1 text-xs font-medium text-white bg-lime-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                বুকমার্ক
+            </div>
+            <div role="tooltip" id="copy-tooltip" class="absolute z-30 invisible inline-block px-2 py-1 text-xs font-medium text-white bg-lime-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                কপি করুন
+            </div>
+            <div role="tooltip" id="note-tooltip" class="absolute z-30 invisible inline-block px-2 py-1 text-xs font-medium text-white bg-lime-950 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                নোট যুক্ত করুন
+            </div>
+            <div class="flex items-center">
+                <div class="statistic font-solaimanlipi px-2 border rounded-xl w-16 border-gray-300 dark:border-gray-600 text-gray-500 text-center mr-3">
+                  {% number_convert 'english_to_bengali' sura.id %}:{% number_convert 'english_to_bengali' verse.id %}
+                </div>
+                <i data-tooltip-target="play-tooltip" onclick="play('{% make_3_digit ayat.sura %}', '{% make_3_digit ayat.aya %}');" aya="{% make_3_digit ayat.aya %}" class="fa-solid fa-play text-gray-500 rounded-full hover:bg-green-200 dark:hover:bg-gray-700 hover:text-lime-700 dark:hover:text-gray-200 text-center p-2 w-4 h-4 cursor-pointer"></i>
+                <i data-tooltip-target="bookmark-tooltip" class="fa-regular fa-bookmark text-gray-500 rounded-full hover:bg-green-200 dark:hover:bg-gray-700 hover:text-lime-700 dark:hover:text-gray-200 text-center p-2 w-4 h-4 cursor-pointer"></i>
+                <i data-tooltip-target="copy-tooltip" id="copy-icon" ionclick="copyClipboard('{{sura.bn_name}}', '{% number_convert 'english_to_bengali' sura.id %}', '{% number_convert 'english_to_bengali' verse.id %}', '{{verse.arabic_text}}', '{{verse.translation}}');" class="fa-solid fa-copy text-gray-500 rounded-full hover:bg-green-200 dark:hover:bg-gray-700 hover:text-lime-700 dark:hover:text-gray-200 text-center p-2 w-4 h-4 cursor-pointer"></i>
+                <i data-tooltip-target="note-tooltip" class="fa-solid fa-notes-medical text-gray-500 rounded-full hover:bg-green-200 dark:hover:bg-gray-700 hover:text-lime-700 dark:hover:text-gray-200 text-center p-2 w-4 h-4 cursor-pointer"></i>
+            </div>
+              
+            <div class="flex flex-row-reverse flex-wrap gap-3 arabic-ayat pt-4 pb-3">
+                {% for word in verse.words %}
+                    <div role="tooltip" id="{{verse.id}}-{{word.id}}" class="word-translate-tooltip absolute z-30 invisible inline-block px-2 py-1 text-xs font-medium text-white bg-lime-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        {{word.bn}}
+                    </div>
+                    <span data-tooltip-target="{{verse.id}}-{{word.id}}" class="flex flex-col gap-2 items-center cursor-pointer group" onclick="pronunsiation( {{sura.id}}, '{% make_3_digit sura.id %}', '{% make_3_digit verse.id %}', '{% make_3_digit word.wid %}');">
+                        <span class="font-kfgq text-3xl group-hover:text-lime-600">{{word.ar}}</span>
+                        <span class="font-solaimanlipi text-sm word-translate group-hover:text-green-500">{{word.bn}}</span>
+                    </span>
+                {% endfor %}
+            </div>
+            <div class="flex py-2 items-center">
+                <div class="text-lime-700 dark:text-lime-500 font-solaimanlipi pr-2 py-0 leading-4 border-r-2 border-r-lime-700 cursor-pointer"><span class="text-green-500 text-sm">{{sura.language}}</span> - {{sura.translate_by}}</div>
+                <div id="see-tafseer" class="text-orange-500 font-solaimanlipi pl-2 hover:font-bold hover:tracking-wide cursor-pointer">তাফসীর <i class="fa-solid fa-arrow-right-long"></i></div>
+            </div>
+            <div class="translated-ayat text-start text-xl py-2 font-solaimanlipi">{{verse.translation}}</div>
+        </div>
+        <div id="tafseer" class="h-0 font-kfgq flex flex-col overflow-hidden">{{verse.footnotes|safe}}</div>
+    </div>
+    {% endfor %}
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script>
+    $(document).on("click", "#see-tafseer", function(event) {
+        let tafseer = $(this).parent().parent().parent().find("#tafseer");
+        if (tafseer.hasClass("h-0")) {
+            tafseer.removeClass("h-0 overflow-hidden");
+            tafseer.addClass("h-auto max-h-96 border-t-2 border-t-gray-200 dark:border-t-gray-600 p-3 overflow-y-auto");
+        } else {
+            tafseer.addClass("h-0 overflow-hidden");
+            tafseer.removeClass("h-auto max-h-96 border-t-2 border-t-gray-200 dark:border-t-gray-600 p-3 overflow-y-auto");
+        }
+    });
+    function pronunsiation(sid, a, b, c){
+        var audio = new Audio(`https://words.audios.quranwbw.com/${sid}/${a}_${b}_${c}.mp3`);
+        audio.play();
+    }
+</script>

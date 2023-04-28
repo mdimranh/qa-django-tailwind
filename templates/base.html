@@ -11,12 +11,23 @@
     <link href="{% static '/css/fontawesome.min.css' %}" rel="stylesheet">
     <link href="{% static '/css/style.css' %}" rel="stylesheet">
     <link href="{% static '/css/icons.min.css' %}" rel="stylesheet">
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            $("#theme-toggle-light-icon").addClass("hidden");
+            $("#theme-toggle-dark-icon").removeClass("hidden");
+        } else {
+            document.documentElement.classList.remove('dark')
+            $("#theme-toggle-dark-icon").addClass("hidden");
+            $("#theme-toggle-light-icon").removeClass("hidden");
+        }
+    </script>
     {% block css %}{% endblock css %}
     <title class="font-solaimanlipi">{% block title %}{% endblock title %}</title>
 </head>
 
-<body class="">
-    <nav class="fixed top-0 z-40 flex justify-between w-full items-center px-4 py-2 bg-white shadow">
+<body class="dark:bg-gray-800 dark:text-slate-400">
+    <nav class="fixed top-0 z-40 flex justify-between w-full items-center px-4 py-2 bg-white dark:bg-gray-800 border-b dark:border-b-slate-700 shadow">
         <a href="/"><img class="w-10" src="/static/img/imran.png"></a>
         <div class="hidden sm:flex items-center w-1/2 lg:w-full max-w-md ms-8">
             <!-- <label for="voice-search" class="sr-only">Search</label> -->
@@ -52,11 +63,17 @@
                 </svg>
             </div>
 
+            <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none rounded-full text-sm p-2.5">
+                <svg aria-hidden="true" id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg aria-hidden="true" id="theme-toggle-light-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Toggle dark mode</span>
+            </button>
+
             <div class="flex items-center">
                 <button type="button" data-dropdown-toggle="language-dropdown-menu"
                     class="flex items-center font-medium justify-center">
                     <i
-                        class="fa-regular fa-circle-question fa-beat w-5 h-5 min-h-min min-w-min hover:bg-gray-200 hover:text-gray-900 rounded-full p-2 cursor-pointer"></i>
+                        class="fa-regular fa-circle-question w-5 h-5 min-h-min min-w-min text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 cursor-pointer"></i>
                 </button>
                 <!-- Dropdown -->
                 <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
@@ -88,17 +105,17 @@
 
             <div id="mega-menu-icons">
                 <button id="mega-menu-icons-dropdown-button" data-dropdown-toggle="mega-menu-icons-dropdown"
-                    class="flex items-center justify-between w-full font-medium text-gray-600 dark:text-white dark:hover:text-blue-500">
+                    class="flex items-center justify-between w-full font-medium">
                     <i
-                        class="fas fa-th-large w-5 h-5 min-h-min min-w-min hover:bg-gray-200 hover:text-gray-900 rounded-full p-2 cursor-pointer"></i>
+                        class="fas fa-th-large w-5 h-5 min-h-min min-w-min text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 cursor-pointer"></i>
                 </button>
                 <div id="mega-menu-icons-dropdown"
                     class="absolute z-10 grid hidden w-fit p-3 grid-cols-2 text-sm bg-white border border-gray-100 rounded-lg shadow-md dark:border-gray-700 dark:bg-gray-700">
-                    <a href="{% url 'quran-home' %}" class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-lg">
+                    <a href="{% url 'quran-home' %}" class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 dark:text-gray-400 dark:hover:text-gray-200 hover:text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 p-2 cursor-pointer rounded-lg">
                         <i class="mdi mdi-book-open-page-variant text-2xl"></i>
                         <p>কুরআন মাজিদ</p>
                     </a>
-                    <div class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 hover:text-gray-700 hover:bg-gray-100 p-2 cursor-pointer rounded-lg">
+                    <div class="flex flex-col w-24 h-20 justify-center items-center text-center text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 p-2 cursor-pointer rounded-lg">
                         <i class="mdi mdi-bookshelf text-2xl"></i>
                         <p>হাদিস</p>
                     </div>
@@ -107,13 +124,13 @@
 
             <div id="mega-menu-icons">
                 <button id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification"
-                    class="flex items-center justify-between w-full font-medium text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-blue-500"
+                    class="flex items-center justify-between w-full font-medium"
                     type="button">
-                    <i class="fa-solid fa-bell w-5 h-5 min-h-min min-w-min hover:bg-gray-200 rounded-full p-2 cursor-pointer"></i>
+                    <i class="fa-solid fa-bell w-5 h-5 min-h-min min-w-min text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 cursor-pointer"></i>
 
                 </button>
                 <div id="dropdownNotification"
-                    class="z-20 hidden w-full sm:max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700"
+                    class="z-20 hidden w-full sm:max-w-sm bg-white border dark:border-gray-600 divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700"
                     aria-labelledby="dropdownNotificationButton">
                     <div
                         class="block px-4 py-2 font-medium text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
@@ -299,12 +316,12 @@
         </div>
     </nav>
 
-    <nav id="second-nav" class="second-nav flex w-full text-sm items-center justify-center fixed bg-white shadow">
+    <nav id="second-nav" class="second-nav flex w-full text-sm items-center justify-center fixed bg-white dark:bg-gray-800 border-b dark:border-b-slate-700 shadow">
         <div id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
             data-dropdown-delay="10" data-dropdown-offset-distance="0"
-            class="flex items-center cursor-pointer hover:bg-green-50 text-gray-400 hover:text-green-800 border-b-2 border-b-transparent hover:border-b-green-800 pt-2 pb-1 px-3">
+            class="flex items-center cursor-pointer hover:bg-green-50 dark:hover:bg-gray-600 text-gray-400 hover:text-green-800 dark:hover:text-green-400 border-b-2 border-b-transparent hover:border-b-green-800 dark:hover:border-green-400 pt-2 pb-1 px-3">
             <i class="fa-solid fa-folder-tree pr-2"></i>
-            <span class="text-green-800">Category</span>
+            <span class="text-green-800 dark:text-green-400">Category</span>
             <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 shadow w-32 dark:bg-gray-700">
                 <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                     <li>
@@ -328,13 +345,13 @@
             </div>
         </div>
         <div
-            class="flex items-center cursor-pointer hover:bg-green-50 text-gray-400 hover:text-green-800 border-b-2 border-b-transparent hover:border-b-green-800 pt-2 pb-1 px-3">
+            class="flex items-center cursor-pointer hover:bg-green-50 dark:hover:bg-gray-600 text-gray-400 hover:text-green-800 dark:hover:text-green-400 border-b-2 border-b-transparent hover:border-b-green-800 dark:hover:border-b-green-400 pt-2 pb-1 px-3">
             <i class="fa-solid fa-folder-tree pr-2"></i>
-            <span class="text-green-800">Category</span>
+            <span class="text-green-800 dark:text-green-400">Category</span>
         </div>
     </nav>
 
-    <div class="main-content mt-24">
+    <div class="main-content mt-24 mx-4">
 
         {% block main_content %}
 
@@ -363,7 +380,7 @@
                                 </svg>
                             </div>
                             <input type="text" id="search-input" name="query" placeholder="Search..."
-                                class="focus:ring-0 border-0 focus:outline-none h-10 text-base text-gray-900 block w-full pl-10 dark:placeholder-gray-400 dark:text-white "
+                                class="focus:ring-0 border-0 focus:outline-none h-10 text-base text-gray-900 block w-full pl-10 dark:placeholder-gray-400 dark:text-white dark:bg-gray-700 "
                                 placeholder="Search your question" autocomplete="off">
                             <button type="button" id="search-modal-close"
                                 class="inline-flex text-gray-400 -me-5 -mt-6 bg-transparent hover:bg-gray-300 hover:text-gray-700 rounded-lg text-xs p-0.5 ml-auto items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -625,7 +642,7 @@
                 </div>
             </div>
             <section
-                class="px-6 bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+                class="px-6">
                 <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 relative">
                     <a href="#"
                         class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
@@ -744,6 +761,15 @@
     <script src="{% static 'js/flowbite.min.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/fontawesome.min.js' %}"></script>
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            $("#theme-toggle-light-icon").addClass("hidden");
+            $("#theme-toggle-dark-icon").removeClass("hidden");
+        } else {
+            $("#theme-toggle-dark-icon").addClass("hidden");
+            $("#theme-toggle-light-icon").removeClass("hidden");
+        }
+    </script>
     <script>
         const $targetEl = document.getElementById('searchModal');
         const options = {
@@ -868,6 +894,23 @@
             }
             prevScrollpos = currentScrollPos;
         }
+    </script>
+    <script>
+        $("#theme-toggle").click(function(){
+            theme = localStorage.getItem("theme");
+            if (theme === "dark"){
+                localStorage.setItem("theme", "light");
+                document.documentElement.classList.remove('dark');
+                $("#theme-toggle-dark-icon").addClass("hidden");
+                $("#theme-toggle-light-icon").removeClass("hidden");
+            }
+            else {
+                localStorage.setItem("theme", "dark");
+                document.documentElement.classList.add('dark');
+                $("#theme-toggle-light-icon").addClass("hidden");
+                $("#theme-toggle-dark-icon").removeClass("hidden");
+            }
+        })
     </script>
     {% block js %}{% endblock js %}
 </body>
