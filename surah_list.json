@@ -1,0 +1,1597 @@
+[{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea0"
+  },
+  "id": 1,
+  "name": "الفاتحة",
+  "transliteration": "Al-Fatihah",
+  "translation": "সূচনা",
+  "type": "meccan",
+  "total_verses": 7,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/1.json",
+  "bn_name": "আল ফাতিহা",
+  "bn_type": "মক্কা",
+  "page": 1
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea1"
+  },
+  "id": 2,
+  "name": "البقرة",
+  "transliteration": "Al-Baqarah",
+  "translation": "বকনা-বাছুর",
+  "type": "medinan",
+  "total_verses": 286,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/2.json",
+  "bn_name": "আল বাক্বারাহ্",
+  "bn_type": "মদীনা",
+  "page": 2
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea2"
+  },
+  "id": 3,
+  "name": "آل عمران",
+  "transliteration": "Ali 'Imran",
+  "translation": "ইমরানের পরিবার",
+  "type": "medinan",
+  "total_verses": 200,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/3.json",
+  "bn_name": "আলে ইমরান",
+  "bn_type": "মদীনা",
+  "page": 50
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea3"
+  },
+  "id": 4,
+  "name": "النساء",
+  "transliteration": "An-Nisa",
+  "translation": "নারী",
+  "type": "medinan",
+  "total_verses": 176,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/4.json",
+  "bn_name": "আন-নিসা",
+  "bn_type": "মদীনা",
+  "page": 77
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea4"
+  },
+  "id": 5,
+  "name": "المائدة",
+  "transliteration": "Al-Ma'idah",
+  "translation": "খাদ্য পরিবেশিত টেবিল",
+  "type": "medinan",
+  "total_verses": 120,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/5.json",
+  "bn_name": "আল-মায়েদাহ্",
+  "bn_type": "মদীনা",
+  "page": 106
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea5"
+  },
+  "id": 6,
+  "name": "الأنعام",
+  "transliteration": "Al-An'am",
+  "translation": "গৃহপালিত পশু",
+  "type": "meccan",
+  "total_verses": 165,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/6.json",
+  "bn_name": "আল-আন‘আম",
+  "bn_type": "মক্কা",
+  "page": 128
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea6"
+  },
+  "id": 7,
+  "name": "الأعراف",
+  "transliteration": "Al-A'raf",
+  "translation": "উচু স্থান",
+  "type": "meccan",
+  "total_verses": 206,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/7.json",
+  "bn_name": "আল-আ‘রাফ",
+  "bn_type": "মক্কা",
+  "page": 151
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea7"
+  },
+  "id": 8,
+  "name": "الأنفال",
+  "transliteration": "Al-Anfal",
+  "translation": "যুদ্ধ-লব্ধ ধনসম্পদ",
+  "type": "medinan",
+  "total_verses": 75,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/8.json",
+  "bn_name": "আল-আনফাল",
+  "bn_type": "মদীনা",
+  "page": 177
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea8"
+  },
+  "id": 9,
+  "name": "التوبة",
+  "transliteration": "At-Tawbah",
+  "translation": "অনুশোচনা",
+  "type": "medinan",
+  "total_verses": 129,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/9.json",
+  "bn_name": "আত-তাওবাহ্",
+  "bn_type": "মদীনা",
+  "page": 187
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ea9"
+  },
+  "id": 10,
+  "name": "يونس",
+  "transliteration": "Yunus",
+  "translation": "নবী ইউনুস",
+  "type": "meccan",
+  "total_verses": 109,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/10.json",
+  "bn_name": "ইউনুস",
+  "bn_type": "মক্কা",
+  "page": 208
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eaa"
+  },
+  "id": 11,
+  "name": "هود",
+  "transliteration": "Hud",
+  "translation": "নবী হুদ",
+  "type": "meccan",
+  "total_verses": 123,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/11.json",
+  "bn_name": "হূদ",
+  "bn_type": "মক্কা",
+  "page": 221
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eab"
+  },
+  "id": 12,
+  "name": "يوسف",
+  "transliteration": "Yusuf",
+  "translation": "নবী ইউসুফ",
+  "type": "meccan",
+  "total_verses": 111,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/12.json",
+  "bn_name": "ইউসুফ",
+  "bn_type": "মক্কা",
+  "page": 235
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eac"
+  },
+  "id": 13,
+  "name": "الرعد",
+  "transliteration": "Ar-Ra'd",
+  "translation": "বজ্রপাত",
+  "type": "medinan",
+  "total_verses": 43,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/13.json",
+  "bn_name": "আর-রা‘দ",
+  "bn_type": "মদীনা",
+  "page": 249
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ead"
+  },
+  "id": 14,
+  "name": "ابراهيم",
+  "transliteration": "Ibrahim",
+  "translation": "নবী ইবরাহীম",
+  "type": "meccan",
+  "total_verses": 52,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/14.json",
+  "bn_name": "ইব্রাহীম",
+  "bn_type": "মক্কা",
+  "page": 255
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eae"
+  },
+  "id": 15,
+  "name": "الحجر",
+  "transliteration": "Al-Hijr",
+  "translation": "পাথুরে পাহাড়",
+  "type": "meccan",
+  "total_verses": 99,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/15.json",
+  "bn_name": "আল-হিজর",
+  "bn_type": "মক্কা",
+  "page": 262
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eaf"
+  },
+  "id": 16,
+  "name": "النحل",
+  "transliteration": "An-Nahl",
+  "translation": "মৌমাছি",
+  "type": "meccan",
+  "total_verses": 128,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/16.json",
+  "bn_name": "আন-নাহল ",
+  "bn_type": "মক্কা",
+  "page": 267
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb0"
+  },
+  "id": 17,
+  "name": "الإسراء",
+  "transliteration": "Al-Isra",
+  "translation": "ইহুদি জাতি",
+  "type": "meccan",
+  "total_verses": 111,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/17.json",
+  "bn_name": "আল-ইসরা",
+  "bn_type": "মক্কা",
+  "page": 282
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb1"
+  },
+  "id": 18,
+  "name": "الكهف",
+  "transliteration": "Al-Kahf",
+  "translation": "গুহা",
+  "type": "meccan",
+  "total_verses": 110,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/18.json",
+  "bn_name": "আল-কাহফ",
+  "bn_type": "মক্কা",
+  "page": 293
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb2"
+  },
+  "id": 19,
+  "name": "مريم",
+  "transliteration": "Maryam",
+  "translation": "মারইয়াম (ঈসা নবীর মা)",
+  "type": "meccan",
+  "total_verses": 98,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/19.json",
+  "bn_name": "মারইয়াম",
+  "bn_type": "মক্কা",
+  "page": 305
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb3"
+  },
+  "id": 20,
+  "name": "طه",
+  "transliteration": "Taha",
+  "translation": "ত়া হা",
+  "type": "meccan",
+  "total_verses": 135,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/20.json",
+  "bn_name": "ত্বা-হা",
+  "bn_type": "মক্কা",
+  "page": 312
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb4"
+  },
+  "id": 21,
+  "name": "الأنبياء",
+  "transliteration": "Al-Anbya",
+  "translation": "নবীগণ",
+  "type": "meccan",
+  "total_verses": 112,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/21.json",
+  "bn_name": "আল-আম্বিয়া",
+  "bn_type": "মক্কা",
+  "page": 322
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb5"
+  },
+  "id": 22,
+  "name": "الحج",
+  "transliteration": "Al-Hajj",
+  "translation": "হ়াজ্জ",
+  "type": "medinan",
+  "total_verses": 78,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/22.json",
+  "bn_name": "আল-হাজ্জ",
+  "bn_type": "মদীনা",
+  "page": 332
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb6"
+  },
+  "id": 23,
+  "name": "المؤمنون",
+  "transliteration": "Al-Mu'minun",
+  "translation": "বিশ্বাসী",
+  "type": "meccan",
+  "total_verses": 118,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/23.json",
+  "bn_name": "আল-মু’মিনূন",
+  "bn_type": "মক্কা",
+  "page": 342
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb7"
+  },
+  "id": 24,
+  "name": "النور",
+  "transliteration": "An-Nur",
+  "translation": "আলো",
+  "type": "medinan",
+  "total_verses": 64,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/24.json",
+  "bn_name": "আন-নূর",
+  "bn_type": "মদীনা",
+  "page": 350
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb8"
+  },
+  "id": 25,
+  "name": "الفرقان",
+  "transliteration": "Al-Furqan",
+  "translation": "মানদণ্ড",
+  "type": "meccan",
+  "total_verses": 77,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/25.json",
+  "bn_name": "আল-ফুরক্বান",
+  "bn_type": "মক্কা",
+  "page": 359
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eb9"
+  },
+  "id": 26,
+  "name": "الشعراء",
+  "transliteration": "Ash-Shu'ara",
+  "translation": "কবি",
+  "type": "meccan",
+  "total_verses": 227,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/26.json",
+  "bn_name": "আশ-শু‘আরা",
+  "bn_type": "মক্কা",
+  "page": 367
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eba"
+  },
+  "id": 27,
+  "name": "النمل",
+  "transliteration": "An-Naml",
+  "translation": "পিঁপড়া",
+  "type": "meccan",
+  "total_verses": 93,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/27.json",
+  "bn_name": "আন-নামল",
+  "bn_type": "মক্কা",
+  "page": 377
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ebb"
+  },
+  "id": 28,
+  "name": "القصص",
+  "transliteration": "Al-Qasas",
+  "translation": "কাহিনি",
+  "type": "meccan",
+  "total_verses": 88,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/28.json",
+  "bn_name": "আল-ক্বাসাস",
+  "bn_type": "মক্কা",
+  "page": 385
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ebc"
+  },
+  "id": 29,
+  "name": "العنكبوت",
+  "transliteration": "Al-'Ankabut",
+  "translation": "মাকড়শা",
+  "type": "meccan",
+  "total_verses": 69,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/29.json",
+  "bn_name": "আল-‘আনকাবূত",
+  "bn_type": "মক্কা",
+  "page": 396
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ebd"
+  },
+  "id": 30,
+  "name": "الروم",
+  "transliteration": "Ar-Rum",
+  "translation": "রোমান জাতি",
+  "type": "meccan",
+  "total_verses": 60,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/30.json",
+  "bn_name": "আর-রূম",
+  "bn_type": "মক্কা",
+  "page": 404
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ebe"
+  },
+  "id": 31,
+  "name": "لقمان",
+  "transliteration": "Luqman",
+  "translation": "এক জ্ঞানী ব্যাক্তি",
+  "type": "meccan",
+  "total_verses": 34,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/31.json",
+  "bn_name": "লুক্বমান",
+  "bn_type": "মক্কা",
+  "page": 411
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ebf"
+  },
+  "id": 32,
+  "name": "السجدة",
+  "transliteration": "As-Sajdah",
+  "translation": "সিজদা",
+  "type": "meccan",
+  "total_verses": 30,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/32.json",
+  "bn_name": "আস-সাজদা",
+  "bn_type": "মক্কা",
+  "page": 415
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec0"
+  },
+  "id": 33,
+  "name": "الأحزاب",
+  "transliteration": "Al-Ahzab",
+  "translation": "জোট",
+  "type": "medinan",
+  "total_verses": 73,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/33.json",
+  "bn_name": "আল-আহযাব",
+  "bn_type": "মদীনা",
+  "page": 418
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec1"
+  },
+  "id": 34,
+  "name": "سبإ",
+  "transliteration": "Saba",
+  "translation": "রানী সাবা/শেবা",
+  "type": "meccan",
+  "total_verses": 54,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/34.json",
+  "bn_name": "সাবা",
+  "bn_type": "মক্কা",
+  "page": 428
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec2"
+  },
+  "id": 35,
+  "name": "فاطر",
+  "transliteration": "Fatir",
+  "translation": "আদি স্রষ্টা",
+  "type": "meccan",
+  "total_verses": 45,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/35.json",
+  "bn_name": "ফাতের",
+  "bn_type": "মক্কা",
+  "page": 434
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec3"
+  },
+  "id": 36,
+  "name": "يس",
+  "transliteration": "Ya-Sin",
+  "translation": "ইয়াসীন",
+  "type": "meccan",
+  "total_verses": 83,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/36.json",
+  "bn_name": "ইয়াসীন",
+  "bn_type": "মক্কা",
+  "page": 440
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec4"
+  },
+  "id": 37,
+  "name": "الصافات",
+  "transliteration": "As-Saffat",
+  "translation": "সারিবদ্ধভাবে দাঁড়ানো",
+  "type": "meccan",
+  "total_verses": 182,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/37.json",
+  "bn_name": "আস-সাফফাত",
+  "bn_type": "মক্কা",
+  "page": 446
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec5"
+  },
+  "id": 38,
+  "name": "ص",
+  "transliteration": "Sad",
+  "translation": "আরবি বর্ণ সাদ",
+  "type": "meccan",
+  "total_verses": 88,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/38.json",
+  "bn_name": "সুরত সদ",
+  "bn_type": "মক্কা",
+  "page": 453
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec6"
+  },
+  "id": 39,
+  "name": "الزمر",
+  "transliteration": "Az-Zumar",
+  "translation": "দলবদ্ধ জনতা",
+  "type": "meccan",
+  "total_verses": 75,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/39.json",
+  "bn_name": "আয-যুমার",
+  "bn_type": "মক্কা",
+  "page": 458
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec7"
+  },
+  "id": 40,
+  "name": "غافر",
+  "transliteration": "Ghafir",
+  "translation": "ক্ষমাকারী",
+  "type": "meccan",
+  "total_verses": 85,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/40.json",
+  "bn_name": "গাফের",
+  "bn_type": "মক্কা",
+  "page": 467
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec8"
+  },
+  "id": 41,
+  "name": "فصلت",
+  "transliteration": "Fussilat",
+  "translation": "সুস্পষ্ট বিবরণ",
+  "type": "meccan",
+  "total_verses": 54,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/41.json",
+  "bn_name": "ফুসসিলাত",
+  "bn_type": "মক্কা",
+  "page": 477
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ec9"
+  },
+  "id": 42,
+  "name": "الشورى",
+  "transliteration": "Ash-Shuraa",
+  "translation": "পরামর্শ",
+  "type": "meccan",
+  "total_verses": 53,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/42.json",
+  "bn_name": "আশ-শূরা",
+  "bn_type": "মক্কা",
+  "page": 483
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eca"
+  },
+  "id": 43,
+  "name": "الزخرف",
+  "transliteration": "Az-Zukhruf",
+  "translation": "সোনাদানা",
+  "type": "meccan",
+  "total_verses": 89,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/43.json",
+  "bn_name": "আয-যুখরুফ",
+  "bn_type": "মক্কা",
+  "page": 489
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ecb"
+  },
+  "id": 44,
+  "name": "الدخان",
+  "transliteration": "Ad-Dukhan",
+  "translation": "ধোঁয়া",
+  "type": "meccan",
+  "total_verses": 59,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/44.json",
+  "bn_name": "আদ-দুখান",
+  "bn_type": "মক্কা",
+  "page": 496
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ecc"
+  },
+  "id": 45,
+  "name": "الجاثية",
+  "transliteration": "Al-Jathiyah",
+  "translation": "নতজানু",
+  "type": "meccan",
+  "total_verses": 37,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/45.json",
+  "bn_name": "আল-জাসিয়া",
+  "bn_type": "মক্কা",
+  "page": 499
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ecd"
+  },
+  "id": 46,
+  "name": "الأحقاف",
+  "transliteration": "Al-Ahqaf",
+  "translation": "বালুর পাহাড়",
+  "type": "meccan",
+  "total_verses": 35,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/46.json",
+  "bn_name": "আল-আহক্বাফ",
+  "bn_type": "মক্কা",
+  "page": 502
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ece"
+  },
+  "id": 47,
+  "name": "محمد",
+  "transliteration": "Muhammad",
+  "translation": "নবী মুহাম্মদ",
+  "type": "medinan",
+  "total_verses": 38,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/47.json",
+  "bn_name": "মুহাম্মাদ",
+  "bn_type": "মদীনা",
+  "page": 507
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ecf"
+  },
+  "id": 48,
+  "name": "الفتح",
+  "transliteration": "Al-Fath",
+  "translation": "বিজয়",
+  "type": "medinan",
+  "total_verses": 29,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/48.json",
+  "bn_name": "আল-ফাতহ",
+  "bn_type": "মদীনা",
+  "page": 511
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed0"
+  },
+  "id": 49,
+  "name": "الحجرات",
+  "transliteration": "Al-Hujurat",
+  "translation": "আবাস",
+  "type": "medinan",
+  "total_verses": 18,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/49.json",
+  "bn_name": "আল-হুজুরাত",
+  "bn_type": "মদীনা",
+  "page": 515
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed1"
+  },
+  "id": 50,
+  "name": "ق",
+  "transliteration": "Qaf",
+  "translation": "কাফ",
+  "type": "meccan",
+  "total_verses": 45,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/50.json",
+  "bn_name": "সুরত ক্বাফ",
+  "bn_type": "মক্কা",
+  "page": 518
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed2"
+  },
+  "id": 51,
+  "name": "الذاريات",
+  "transliteration": "Adh-Dhariyat",
+  "translation": "বিক্ষেপকারী বাতাস",
+  "type": "meccan",
+  "total_verses": 60,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/51.json",
+  "bn_name": "আয-যারিয়াত",
+  "bn_type": "মক্কা",
+  "page": 520
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed3"
+  },
+  "id": 52,
+  "name": "الطور",
+  "transliteration": "At-Tur",
+  "translation": "পাহাড়",
+  "type": "meccan",
+  "total_verses": 49,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/52.json",
+  "bn_name": "আত-তূর",
+  "bn_type": "মক্কা",
+  "page": 523
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed4"
+  },
+  "id": 53,
+  "name": "النجم",
+  "transliteration": "An-Najm",
+  "translation": "তারা",
+  "type": "meccan",
+  "total_verses": 62,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/53.json",
+  "bn_name": "আন-নাজম",
+  "bn_type": "মক্কা",
+  "page": 526
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed5"
+  },
+  "id": 54,
+  "name": "القمر",
+  "transliteration": "Al-Qamar",
+  "translation": "চাঁদ",
+  "type": "meccan",
+  "total_verses": 55,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/54.json",
+  "bn_name": "আল-ক্বামার",
+  "bn_type": "মক্কা",
+  "page": 528
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed6"
+  },
+  "id": 55,
+  "name": "الرحمن",
+  "transliteration": "Ar-Rahman",
+  "translation": "পরম করুণাময়",
+  "type": "medinan",
+  "total_verses": 78,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/55.json",
+  "bn_name": "আর-রাহমান",
+  "bn_type": "মদীনা",
+  "page": 531
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed7"
+  },
+  "id": 56,
+  "name": "الواقعة",
+  "transliteration": "Al-Waqi'ah",
+  "translation": "নিশ্চিত ঘটনা",
+  "type": "meccan",
+  "total_verses": 96,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/56.json",
+  "bn_name": "আল-ওয়াক্বি‘আহ",
+  "bn_type": "মক্কা",
+  "page": 534
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed8"
+  },
+  "id": 57,
+  "name": "الحديد",
+  "transliteration": "Al-Hadid",
+  "translation": "লোহা",
+  "type": "medinan",
+  "total_verses": 29,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/57.json",
+  "bn_name": "আল-হাদীদ",
+  "bn_type": "মদীনা",
+  "page": 537
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ed9"
+  },
+  "id": 58,
+  "name": "المجادلة",
+  "transliteration": "Al-Mujadila",
+  "translation": "অনুযোগকারিণী",
+  "type": "medinan",
+  "total_verses": 22,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/58.json",
+  "bn_name": "আল-মুজাদালাহ্",
+  "bn_type": "মদীনা",
+  "page": 542
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eda"
+  },
+  "id": 59,
+  "name": "الحشر",
+  "transliteration": "Al-Hashr",
+  "translation": "সমাবেশ",
+  "type": "medinan",
+  "total_verses": 24,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/59.json",
+  "bn_name": "আল-হাশর",
+  "bn_type": "মদীনা",
+  "page": 545
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206edb"
+  },
+  "id": 60,
+  "name": "الممتحنة",
+  "transliteration": "Al-Mumtahanah",
+  "translation": "নারী, যাকে পরীক্ষা করা হবে",
+  "type": "medinan",
+  "total_verses": 13,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/60.json",
+  "bn_name": "আল-মুমতাহিনা",
+  "bn_type": "মদীনা",
+  "page": 549
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206edc"
+  },
+  "id": 61,
+  "name": "الصف",
+  "transliteration": "As-Saf",
+  "translation": "সারিবদ্ধ সৈন্যদল",
+  "type": "medinan",
+  "total_verses": 14,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/61.json",
+  "bn_name": "আস-সাফ",
+  "bn_type": "মদীনা",
+  "page": 551
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206edd"
+  },
+  "id": 62,
+  "name": "الجمعة",
+  "transliteration": "Al-Jumu'ah",
+  "translation": "সম্মেলন/শুক্রবার",
+  "type": "medinan",
+  "total_verses": 11,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/62.json",
+  "bn_name": "আল-জুমু‘আ",
+  "bn_type": "মদীনা",
+  "page": 553
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ede"
+  },
+  "id": 63,
+  "name": "المنافقون",
+  "transliteration": "Al-Munafiqun",
+  "translation": "ভণ্ড বিশ্বাসী",
+  "type": "medinan",
+  "total_verses": 11,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/63.json",
+  "bn_name": "আল-মুনাফিক্বূন",
+  "bn_type": "মদীনা",
+  "page": 554
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206edf"
+  },
+  "id": 64,
+  "name": "التغابن",
+  "transliteration": "At-Taghabun",
+  "translation": "মোহ অপসারণ",
+  "type": "medinan",
+  "total_verses": 18,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/64.json",
+  "bn_name": "আত-তাগাবুন",
+  "bn_type": "মদীনা",
+  "page": 556
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee0"
+  },
+  "id": 65,
+  "name": "الطلاق",
+  "transliteration": "At-Talaq",
+  "translation": "তালাক",
+  "type": "medinan",
+  "total_verses": 12,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/65.json",
+  "bn_name": "আত-ত্বালাক",
+  "bn_type": "মদীনা",
+  "page": 558
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee1"
+  },
+  "id": 66,
+  "name": "التحريم",
+  "transliteration": "At-Tahrim",
+  "translation": "নিষিদ্ধকরণ",
+  "type": "medinan",
+  "total_verses": 12,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/66.json",
+  "bn_name": "আত-তাহরীম",
+  "bn_type": "মদীনা",
+  "page": 560
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee2"
+  },
+  "id": 67,
+  "name": "الملك",
+  "transliteration": "Al-Mulk",
+  "translation": "সার্বভৌম কর্তৃত্ব",
+  "type": "meccan",
+  "total_verses": 30,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/67.json",
+  "bn_name": "আল-মুলক",
+  "bn_type": "মক্কা",
+  "page": 562
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee3"
+  },
+  "id": 68,
+  "name": "القلم",
+  "transliteration": "Al-Qalam",
+  "translation": "কলম",
+  "type": "meccan",
+  "total_verses": 52,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/68.json",
+  "bn_name": "আল-ক্বালাম",
+  "bn_type": "মক্কা",
+  "page": 564
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee4"
+  },
+  "id": 69,
+  "name": "الحاقة",
+  "transliteration": "Al-Haqqah",
+  "translation": "নিশ্চিত সত্য",
+  "type": "meccan",
+  "total_verses": 52,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/69.json",
+  "bn_name": "আল-হাক্কাহ্",
+  "bn_type": "মক্কা",
+  "page": 566
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee5"
+  },
+  "id": 70,
+  "name": "المعارج",
+  "transliteration": "Al-Ma'arij",
+  "translation": "উন্নয়নের সোপান",
+  "type": "meccan",
+  "total_verses": 44,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/70.json",
+  "bn_name": "আল-মা‘আরেজ",
+  "bn_type": "মক্কা",
+  "page": 568
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee6"
+  },
+  "id": 71,
+  "name": "نوح",
+  "transliteration": "Nuh",
+  "translation": "নবী নূহ",
+  "type": "meccan",
+  "total_verses": 28,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/71.json",
+  "bn_name": "নূহ",
+  "bn_type": "মক্কা",
+  "page": 570
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee7"
+  },
+  "id": 72,
+  "name": "الجن",
+  "transliteration": "Al-Jinn",
+  "translation": "জিন সম্প্রদায়",
+  "type": "meccan",
+  "total_verses": 28,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/72.json",
+  "bn_name": "আল-জিন্ন",
+  "bn_type": "মক্কা",
+  "page": 572
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee8"
+  },
+  "id": 73,
+  "name": "المزمل",
+  "transliteration": "Al-Muzzammil",
+  "translation": "বস্ত্রাচ্ছাদনকারী",
+  "type": "meccan",
+  "total_verses": 20,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/73.json",
+  "bn_name": "আল-মুযযাম্মিল",
+  "bn_type": "মক্কা",
+  "page": 574
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ee9"
+  },
+  "id": 74,
+  "name": "المدثر",
+  "transliteration": "Al-Muddaththir",
+  "translation": "পোশাক পরিহিত",
+  "type": "meccan",
+  "total_verses": 56,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/74.json",
+  "bn_name": "আল-মুদ্দাসসির",
+  "bn_type": "মক্কা",
+  "page": 575
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eea"
+  },
+  "id": 75,
+  "name": "القيامة",
+  "transliteration": "Al-Qiyamah",
+  "translation": "পুনরুত্থান",
+  "type": "meccan",
+  "total_verses": 40,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/75.json",
+  "bn_name": "আল-ক্বিয়ামাহ্",
+  "bn_type": "মক্কা",
+  "page": 577
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eeb"
+  },
+  "id": 76,
+  "name": "الانسان",
+  "transliteration": "Al-Insan",
+  "translation": "মানবজাতি",
+  "type": "medinan",
+  "total_verses": 31,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/76.json",
+  "bn_name": "আল-ইনসান",
+  "bn_type": "মদীনা",
+  "page": 578
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eec"
+  },
+  "id": 77,
+  "name": "المرسلات",
+  "transliteration": "Al-Mursalat",
+  "translation": "প্রেরিত পুরুষ",
+  "type": "meccan",
+  "total_verses": 50,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/77.json",
+  "bn_name": "আল-মুরসালাত",
+  "bn_type": "মক্কা",
+  "page": 580
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eed"
+  },
+  "id": 78,
+  "name": "النبإ",
+  "transliteration": "An-Naba",
+  "translation": "মহাসংবাদ",
+  "type": "meccan",
+  "total_verses": 40,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/78.json",
+  "bn_name": "আন-নাবা",
+  "bn_type": "মক্কা",
+  "page": 582
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eee"
+  },
+  "id": 79,
+  "name": "النازعات",
+  "transliteration": "An-Nazi'at",
+  "translation": "প্রচেষ্টাকারী",
+  "type": "meccan",
+  "total_verses": 46,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/79.json",
+  "bn_name": "আন-নাযি‘আত",
+  "bn_type": "মক্কা",
+  "page": 583
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eef"
+  },
+  "id": 80,
+  "name": "عبس",
+  "transliteration": "'Abasa",
+  "translation": "সে ভ্রু কুঁচকালো",
+  "type": "meccan",
+  "total_verses": 42,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/80.json",
+  "bn_name": "‘আবাসা",
+  "bn_type": "মক্কা",
+  "page": 585
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef0"
+  },
+  "id": 81,
+  "name": "التكوير",
+  "transliteration": "At-Takwir",
+  "translation": "অন্ধকারাচ্ছন্ন",
+  "type": "meccan",
+  "total_verses": 29,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/81.json",
+  "bn_name": "আত-তাকভীর",
+  "bn_type": "মক্কা",
+  "page": 586
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef1"
+  },
+  "id": 82,
+  "name": "الإنفطار",
+  "transliteration": "Al-Infitar",
+  "translation": "বিদীর্ণ করা",
+  "type": "meccan",
+  "total_verses": 19,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/82.json",
+  "bn_name": "আল-ইনফিতার",
+  "bn_type": "মক্কা",
+  "page": 587
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef2"
+  },
+  "id": 83,
+  "name": "المطففين",
+  "transliteration": "Al-Mutaffifin",
+  "translation": "প্রতারণা করা",
+  "type": "meccan",
+  "total_verses": 36,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/83.json",
+  "bn_name": "আল-মুতাফফিফীন",
+  "bn_type": "মক্কা",
+  "page": 587
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef3"
+  },
+  "id": 84,
+  "name": "الإنشقاق",
+  "transliteration": "Al-Inshiqaq",
+  "translation": "খণ্ড-বিখণ্ডকরণ",
+  "type": "meccan",
+  "total_verses": 25,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/84.json",
+  "bn_name": "আল-ইনশিক্বাক",
+  "bn_type": "মক্কা",
+  "page": 589
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef4"
+  },
+  "id": 85,
+  "name": "البروج",
+  "transliteration": "Al-Buruj",
+  "translation": "নক্ষত্রপুঞ্জ",
+  "type": "meccan",
+  "total_verses": 22,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/85.json",
+  "bn_name": "আল-বুরূজ",
+  "bn_type": "মক্কা",
+  "page": 590
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef5"
+  },
+  "id": 86,
+  "name": "الطارق",
+  "transliteration": "At-Tariq",
+  "translation": "রাতের আগন্তুক",
+  "type": "meccan",
+  "total_verses": 17,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/86.json",
+  "bn_name": "আত-ত্বারেক",
+  "bn_type": "মক্কা",
+  "page": 591
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef6"
+  },
+  "id": 87,
+  "name": "الأعلى",
+  "transliteration": "Al-A'la",
+  "translation": "সর্বোন্নত",
+  "type": "meccan",
+  "total_verses": 19,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/87.json",
+  "bn_name": "আল-আ‘লা",
+  "bn_type": "মক্কা",
+  "page": 591
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef7"
+  },
+  "id": 88,
+  "name": "الغاشية",
+  "transliteration": "Al-Ghashiyah",
+  "translation": "বিহ্বলকর ঘটনা",
+  "type": "meccan",
+  "total_verses": 26,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/88.json",
+  "bn_name": "আল-গাশিয়াহ্",
+  "bn_type": "মক্কা",
+  "page": 592
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef8"
+  },
+  "id": 89,
+  "name": "الفجر",
+  "transliteration": "Al-Fajr",
+  "translation": "ভোরবেলা",
+  "type": "meccan",
+  "total_verses": 30,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/89.json",
+  "bn_name": "আল-ফাজর",
+  "bn_type": "মক্কা",
+  "page": 593
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206ef9"
+  },
+  "id": 90,
+  "name": "البلد",
+  "transliteration": "Al-Balad",
+  "translation": "নগর",
+  "type": "meccan",
+  "total_verses": 20,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/90.json",
+  "bn_name": "আল-বালাদ",
+  "bn_type": "মক্কা",
+  "page": 594
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206efa"
+  },
+  "id": 91,
+  "name": "الشمس",
+  "transliteration": "Ash-Shams",
+  "translation": "সূর্য",
+  "type": "meccan",
+  "total_verses": 15,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/91.json",
+  "bn_name": "আশ-শামস",
+  "bn_type": "মক্কা",
+  "page": 595
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206efb"
+  },
+  "id": 92,
+  "name": "الليل",
+  "transliteration": "Al-Layl",
+  "translation": "রাত",
+  "type": "meccan",
+  "total_verses": 21,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/92.json",
+  "bn_name": "আল-লাইল",
+  "bn_type": "মক্কা",
+  "page": 595
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206efc"
+  },
+  "id": 93,
+  "name": "الضحى",
+  "transliteration": "Ad-Duhaa",
+  "translation": "পূর্বাহ্নের সুর্যকিরণ",
+  "type": "meccan",
+  "total_verses": 11,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/93.json",
+  "bn_name": "আদ্ব-দ্বুহা",
+  "bn_type": "মক্কা",
+  "page": 596
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206efd"
+  },
+  "id": 94,
+  "name": "الشرح",
+  "transliteration": "Ash-Sharh",
+  "translation": "বক্ষ প্রশস্তকরণ",
+  "type": "meccan",
+  "total_verses": 8,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/94.json",
+  "bn_name": "আশ-শারহ",
+  "bn_type": "মক্কা",
+  "page": 596
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206efe"
+  },
+  "id": 95,
+  "name": "التين",
+  "transliteration": "At-Tin",
+  "translation": "ডুমুর",
+  "type": "meccan",
+  "total_verses": 8,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/95.json",
+  "bn_name": "আত-তীন",
+  "bn_type": "মক্কা",
+  "page": 597
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206eff"
+  },
+  "id": 96,
+  "name": "العلق",
+  "transliteration": "Al-'Alaq",
+  "translation": "রক্তপিণ্ড",
+  "type": "meccan",
+  "total_verses": 19,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/96.json",
+  "bn_name": "আল-‘আলাক্ব",
+  "bn_type": "মক্কা",
+  "page": 597
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f00"
+  },
+  "id": 97,
+  "name": "القدر",
+  "transliteration": "Al-Qadr",
+  "translation": "মহিমান্বিত",
+  "type": "meccan",
+  "total_verses": 5,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/97.json",
+  "bn_name": "আল-ক্বাদর",
+  "bn_type": "মক্কা",
+  "page": 598
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f01"
+  },
+  "id": 98,
+  "name": "البينة",
+  "transliteration": "Al-Bayyinah",
+  "translation": "প্রমাণ",
+  "type": "medinan",
+  "total_verses": 8,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/98.json",
+  "bn_name": "আল-বায়্যিনাহ্",
+  "bn_type": "মদীনা",
+  "page": 598
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f02"
+  },
+  "id": 99,
+  "name": "الزلزلة",
+  "transliteration": "Az-Zalzalah",
+  "translation": "ভূমিকম্প",
+  "type": "medinan",
+  "total_verses": 8,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/99.json",
+  "bn_name": "আয-যালযালাহ্",
+  "bn_type": "মদীনা",
+  "page": 599
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f03"
+  },
+  "id": 100,
+  "name": "العاديات",
+  "transliteration": "Al-'Adiyat",
+  "translation": "অভিযানকারী",
+  "type": "meccan",
+  "total_verses": 11,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/100.json",
+  "bn_name": "আল-‘আদিয়াত",
+  "bn_type": "মক্কা",
+  "page": 599
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f04"
+  },
+  "id": 101,
+  "name": "القارعة",
+  "transliteration": "Al-Qari'ah",
+  "translation": "মহাসংকট",
+  "type": "meccan",
+  "total_verses": 11,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/101.json",
+  "bn_name": "আল-ক্বারি‘আহ্",
+  "bn_type": "মক্কা",
+  "page": 600
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f05"
+  },
+  "id": 102,
+  "name": "التكاثر",
+  "transliteration": "At-Takathur",
+  "translation": "প্রাচুর্যের প্রতিযোগিতা",
+  "type": "meccan",
+  "total_verses": 8,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/102.json",
+  "bn_name": "আত-তাকাসুর",
+  "bn_type": "মক্কা",
+  "page": 600
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f06"
+  },
+  "id": 103,
+  "name": "العصر",
+  "transliteration": "Al-'Asr",
+  "translation": "সময়",
+  "type": "meccan",
+  "total_verses": 3,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/103.json",
+  "bn_name": "আল-‘আসর",
+  "bn_type": "মক্কা",
+  "page": 601
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f07"
+  },
+  "id": 104,
+  "name": "الهمزة",
+  "transliteration": "Al-Humazah",
+  "translation": "পরনিন্দাকারী",
+  "type": "meccan",
+  "total_verses": 9,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/104.json",
+  "bn_name": "আল-হুমাযাহ্",
+  "bn_type": "মক্কা",
+  "page": 601
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f08"
+  },
+  "id": 105,
+  "name": "الفيل",
+  "transliteration": "Al-Fil",
+  "translation": "হাতি",
+  "type": "meccan",
+  "total_verses": 5,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/105.json",
+  "bn_name": "আল-ফীল",
+  "bn_type": "মক্কা",
+  "page": 601
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f09"
+  },
+  "id": 106,
+  "name": "قريش",
+  "transliteration": "Quraysh",
+  "translation": "কুরাইশ গোত্র",
+  "type": "meccan",
+  "total_verses": 4,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/106.json",
+  "bn_name": "ক্বুরাইশ",
+  "bn_type": "মক্কা",
+  "page": 602
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f0a"
+  },
+  "id": 107,
+  "name": "الماعون",
+  "transliteration": "Al-Ma'un",
+  "translation": "সাহায্য সহায়তা",
+  "type": "meccan",
+  "total_verses": 7,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/107.json",
+  "bn_name": "আল-মা‘ঊন",
+  "bn_type": "মক্কা",
+  "page": 602
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f0b"
+  },
+  "id": 108,
+  "name": "الكوثر",
+  "transliteration": "Al-Kawthar",
+  "translation": "কাউসার/প্রাচুর্য",
+  "type": "meccan",
+  "total_verses": 3,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/108.json",
+  "bn_name": "আল-কাউসার",
+  "bn_type": "মক্কা",
+  "page": 602
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f0c"
+  },
+  "id": 109,
+  "name": "الكافرون",
+  "transliteration": "Al-Kafirun",
+  "translation": "অবিশ্বাসী",
+  "type": "meccan",
+  "total_verses": 6,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/109.json",
+  "bn_name": "আল-কাফিরূন",
+  "bn_type": "মক্কা",
+  "page": 603
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f0d"
+  },
+  "id": 110,
+  "name": "النصر",
+  "transliteration": "An-Nasr",
+  "translation": "সাহায্য",
+  "type": "medinan",
+  "total_verses": 3,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/110.json",
+  "bn_name": "আন-নাসর",
+  "bn_type": "মদীনা",
+  "page": 603
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f0e"
+  },
+  "id": 111,
+  "name": "المسد",
+  "transliteration": "Al-Masad",
+  "translation": "খেজুরের পাকানো (রশি)",
+  "type": "meccan",
+  "total_verses": 5,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/111.json",
+  "bn_name": "আল-মাসাদ",
+  "bn_type": "মক্কা",
+  "page": 603
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f0f"
+  },
+  "id": 112,
+  "name": "الإخلاص",
+  "transliteration": "Al-Ikhlas",
+  "translation": "আন্তরিকতা",
+  "type": "meccan",
+  "total_verses": 4,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/112.json",
+  "bn_name": "আল-ইখলাস",
+  "bn_type": "মক্কা",
+  "page": 604
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f10"
+  },
+  "id": 113,
+  "name": "الفلق",
+  "transliteration": "Al-Falaq",
+  "translation": "নিশিভোর",
+  "type": "meccan",
+  "total_verses": 5,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/113.json",
+  "bn_name": "আল-ফালাক্ব",
+  "bn_type": "মদীনা",
+  "page": 604
+},{
+  "_id": {
+    "$oid": "643c31f377e39999d8206f11"
+  },
+  "id": 114,
+  "name": "الناس",
+  "transliteration": "An-Nas",
+  "translation": "মানুষ জাতি",
+  "type": "meccan",
+  "total_verses": 6,
+  "link": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/bn/114.json",
+  "bn_name": "আন-নাস",
+  "bn_type": "মদীনা",
+  "page": 604
+}]
