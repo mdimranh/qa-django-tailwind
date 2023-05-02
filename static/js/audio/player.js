@@ -255,6 +255,15 @@ function play(sura_name=undefined, sura, aya) {
       $("#previous-aya").addClass("cursor-pointer").removeClass("cursor-not-allowed");
     }
     audio.play();
+    var prevAyaDiv = $('#aya-' + (aya - 1));
+    var ayaDiv = $('#aya-' + aya);
+    var nextAyaDiv = $('#aya-' + (aya + 1));
+    var ayaDivPosition = ayaDiv.position().top - 70;
+    $(".aya-select").removeClass("aya-select border-teal-700 dark:border-teal-700 bg-lime-100 dark:bg-gray-900");
+    ayaDiv.addClass("aya-select border-teal-700 dark:border-teal-700 bg-lime-100 dark:bg-gray-900");
+    $('body, html').animate({
+        scrollTop: ayaDivPosition
+    });
     audio.sura_name = sura_name;
     audio.sura = sura;
     audio.aya = aya;
